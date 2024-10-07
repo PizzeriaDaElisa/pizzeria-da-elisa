@@ -1268,7 +1268,7 @@ h1 {
   /* Larghezza al 100% */
   height: 300px;
   /* Altezza dello schermo */
-  background-image: url("img/pizforno.jpeg");
+  background-image: url("pizforno.jpeg");
   /* URL dell'immagine */
   background-repeat: none;
   background-size: cover;
