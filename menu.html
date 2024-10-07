@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzeria da elisa Menu</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="home.html"
+          ><img
+            src="img/logo.png"
+            alt="Logo Pizzeria del Buon Gusto"
+            class="logo"
+        /></a>
+
+        <nav>
+          <a href="home.html"><strong>HOME</strong></a>
+          <a href="menu.html"><strong>MENU</strong></a>
+          <a href="chi-siamo.html"><strong>CHI SIAMO</strong></a>
+          <a href="recensioni.html"><strong>RECENSIONI</strong></a>
+        </nav>
+
+        <!-- Menu Toggle Button (visibile solo su dispositivi mobili) -->
+        <div class="menu-toggle" id="menu-toggle">
+          &#9776;
+          <!-- Icona menu (hamburger) -->
+        </div>
+        <nav id="mobile-menu">
+          <div>
+            <a href="home.html"><strong>HOME</strong></a>
+          </div>
+          <div>
+            <a href="menu.html"><strong>MENU</strong></a>
+          </div>
+          <div>
+            <a href="chi-siamo.html"><strong>CHI SIAMO</strong></a>
+          </div>
+          <div><a href="recensioni.html" target="_new">RECENSIONI</a></div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="carousel">
+      <img src="img/pizza1.jpeg" alt="Pizza 1" />
+      <div class="overlay-text"></div>
+    </div>
+    <section>
+      <!-- Pulsante per aprire la finestra modale -->
+      <button class="open-modal-button">Vedi menù cartaceo</button>
+    </section>
+    <!-- Finestra modale -->
+    <div class="caromenu" id="caromenu">
+      <button class="arrow left-arrow3" id="prevButton">&#10094;</button>
+      <img
+        id="caroImage"
+        src="img/immagine_menu1.jpeg"
+        alt="Immagine del Menu"
+      />
+
+      <button class="arrow right-arrow3" id="nextButton">&#10095;</button>
+    </div>
+
+    <section class="menu-section">
+      <h2>Classiche</h2>
+      <ul>
+        <li>
+          <span class="pizza-name">Margherita</span
+          ><span class="pizza-price">€ 5,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Marinara</span
+          ><span class="pizza-price">€ 4,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Napoli</span
+          ><span class="pizza-price">€ 6,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Capricciosa</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Diavola</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Quattro Stagioni</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Prosciutto e Funghi</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Salsiccia</span
+          ><span class="pizza-price">€ 6,50</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h2>Speciali</h2>
+      <ul>
+        <li>
+          <span class="pizza-name">Boscaiola</span
+          ><span class="pizza-price">€ 8,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Bufala</span
+          ><span class="pizza-price">€ 9,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Quattro Formaggi</span
+          ><span class="pizza-price">€ 8,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Calzone</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Tonno e Cipolla</span
+          ><span class="pizza-price">€ 8,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Speck e Gorgonzola</span
+          ><span class="pizza-price">€ 9,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Scamorza e Funghi</span
+          ><span class="pizza-price">€ 8,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Carbonara</span
+          ><span class="pizza-price">€ 8,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Fiorentina</span
+          ><span class="pizza-price">€ 8,00</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h2>Vegetariane</h2>
+      <ul>
+        <li>
+          <span class="pizza-name">Ortolana</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Vegana</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Zucchine e Pomodori</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Melanzane e Provola</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Peperoni e Olive</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Funghi e Rucola</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Carciofi e Pomodorini</span
+          ><span class="pizza-price">€ 7,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Spinaci e Ricotta</span
+          ><span class="pizza-price">€ 7,00</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h2>Gourmet</h2>
+      <ul>
+        <li>
+          <span class="pizza-name">Tartufo e Prosciutto</span
+          ><span class="pizza-price">€ 12,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Porcini e Burrata</span
+          ><span class="pizza-price">€ 11,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Frutti di Mare</span
+          ><span class="pizza-price">€ 13,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Fichi e Gorgonzola</span
+          ><span class="pizza-price">€ 11,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Salame Piccante e Miele</span
+          ><span class="pizza-price">€ 10,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Salmone e Avocado</span
+          ><span class="pizza-price">€ 12,50</span>
+        </li>
+        <li>
+          <span class="pizza-name">Pancetta e Noci</span
+          ><span class="pizza-price">€ 11,00</span>
+        </li>
+        <li>
+          <span class="pizza-name">Gamberi e Zucchine</span
+          ><span class="pizza-price">€ 12,50</span>
+        </li>
+      </ul>
+    </section>
+
+    <div class="sectioninformation">
+      <div class="sectioninformation-logo">
+        <img src="img/logofooter.png" />
+      </div>
+      <div class="sectioninformation-links">
+        <h3>Link Utili</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">Chi Siamo</a></li>
+          <li><a href="recensioni.html" target="_new">Recensioni</a></li>
+        </ul>
+      </div>
+
+      <div class="sectioninformation-opening-hours">
+        <h3>Orari di Apertura</h3>
+        <p>Mar - Dom: 6:30 - 10:00</p>
+      </div>
+      <div class="sectioninformation-social-icons">
+        <h3>Seguici</h3>
+        <a href="#"
+          ><img
+            src="img/facebook-1-svgrepo-com.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="img/instagram-1-svgrepo-com.png"
+            alt="Instagram"
+            class="social-icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="img/twitter-color-svgrepo-com.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Pizzeria del Buon Gusto. Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+    <script>
+      // Aggiunge la classe "header-scrolled" all'header quando si scorre in basso
+      window.onscroll = function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      };
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const backgroundImage = document.querySelector(".background-image");
+      });
+
+      // menu a tendina
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // Apre/chiude il menu al clic del bottone
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.style.display =
+            mobileMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Nasconde il menu cliccando fuori da esso
+        document.addEventListener("click", (event) => {
+          if (
+            !mobileMenu.contains(event.target) &&
+            event.target !== menuToggle
+          ) {
+            mobileMenu.style.display = "none";
+          }
+        });
+      });
+
+      const caromenu = document.getElementById("caromenu");
+      const openModalButton = document.querySelector(".open-modal-button");
+      const caroImage = document.getElementById("caroImage");
+      const prevButton = document.getElementById("prevButton");
+      const nextButton = document.getElementById("nextButton");
+
+      // Lista delle immagini
+      const images = [
+        "img/immagine_menu1.jpeg",
+        "img/immagine_menu2.jpeg",
+        "img/immagine_menu3.jpeg",
+        "img/immagine_menu4.jpeg",
+      ];
+
+      let currentIndex = 0;
+
+      // Apri il carosello
+      openModalButton.addEventListener("click", () => {
+        caromenu.style.display = "flex";
+        updateImage();
+      });
+
+      // Aggiorna l'immagine
+      function updateImage() {
+        caroImage.src = images[currentIndex];
+      }
+
+      // Chiudi il carosello quando si clicca fuori dall'immagine
+      caromenu.addEventListener("click", (event) => {
+        if (event.target === caromenu) {
+          caromenu.style.display = "none";
+        }
+      });
+
+      // Gestione del click sul pulsante precedente
+      prevButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Impedisce la chiusura del carosello
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Scorrimento circolare
+        updateImage();
+      });
+
+      // Gestione del click sul pulsante successivo
+      nextButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Impedisce la chiusura del carosello
+        currentIndex = (currentIndex + 1) % images.length; // Scorrimento circolare
+        updateImage();
+      });
+    </script>
+  </body>
+</html>

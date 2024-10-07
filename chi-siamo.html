@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzeria da elisa chi siamo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon" />
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 10px;
+      }
+
+      .column {
+        flex: 1;
+        margin: 0 10px;
+        opacity: 0;
+        /* Nascondi all'inizio */
+        transform: translateY(40px);
+        /* Posizione di partenza */
+        transition: transform 1s ease-out, opacity 1s ease-out;
+      }
+
+      .box {
+        padding: 60px;
+        margin: 0 0;
+        text-align: center;
+      }
+
+      .name {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      .role {
+        font-size: 1em;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .column {
+          margin: 10px 0;
+          width: 90%; /* Riduci la larghezza per centratura */
+        }
+      }
+
+      .contact-info a {
+       text-decoration: none;
+      }
+
+      .contact-info {
+        text-align: center;
+        background-color: #d32f2f;
+        color: #fff;
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      .contact-info h2 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #fff;
+      }
+
+      .contact-info p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="home.html"
+          ><img
+            src="img/logo.png"
+            alt="Logo Pizzeria del Buon Gusto"
+            class="logo"
+        /></a>
+
+        <nav>
+          <a href="home.html"><strong>HOME</strong></a>
+          <a href="menu.html"><strong>MENU</strong></a>
+          <a href="chi-siamo.html"><strong>CHI SIAMO</strong></a>
+          <a href="recensioni.html"><strong>RECENSIONI</strong></a>
+        </nav>
+
+        <!-- Menu Toggle Button (visibile solo su dispositivi mobili) -->
+        <div class="menu-toggle" id="menu-toggle">
+          &#9776;
+          <!-- Icona menu (hamburger) -->
+        </div>
+        <nav id="mobile-menu">
+          <div>
+            <a href="home.html"><strong>HOME</strong></a>
+          </div>
+          <div>
+            <a href="menu.html"><strong>MENU</strong></a>
+          </div>
+          <div>
+            <a href="chi-siamo.html"><strong>CHI SIAMO</strong></a>
+          </div>
+          <div><a href="recensioni.html" target="_new">RECENSIONI</a></div>
+        </nav>
+      </div>
+    </header>
+    <div class="carousel">
+      <img src="img/pizza1.jpeg" alt="Pizza 1" />
+      <div class="overlay-text"></div>
+    </div>
+    <h1 style="text-align: center; margin-top: 60px">IL NOSTRO STAFF</h1>
+    <div class="container">
+      <!-- Prima colonna -->
+      <div class="column">
+        <div class="box">
+          <div class="name">Nome 1</div>
+          <div class="role">Ruolo 1</div>
+        </div>
+        <div class="box">
+          <div class="name">Nome 2</div>
+          <div class="role">Ruolo 2</div>
+        </div>
+      </div>
+
+      <!-- Seconda colonna (al centro) -->
+      <div class="column">
+        <div class="box">
+          <div class="name">Nome 3</div>
+          <div class="role">Ruolo 3</div>
+        </div>
+        <div class="box">
+          <div class="name">Nome 4</div>
+          <div class="role">Ruolo 4</div>
+        </div>
+      </div>
+
+      <!-- Terza colonna -->
+      <div class="column">
+        <div class="box">
+          <div class="name">Nome 5</div>
+          <div class="role">Ruolo 5</div>
+        </div>
+        <div class="box">
+          <div class="name">Nome 6</div>
+          <div class="role">Ruolo 6</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione contatti -->
+    <div class="contact-info">
+      <h2>Contattaci</h2>
+      <p>
+        <strong>Offriamo consegna a domicilio a:</strong>
+        paese1,paese2,paese3,paese4
+      </p>
+      <p><strong>Numero di telefono:</strong><a href="tel:0364 088032"><strong>0364 088032</strong></a></p>
+    </div>
+    <!-- fine sezione contatti-->
+
+    <div class="sectioninformation">
+      <div class="sectioninformation-logo">
+        <img src="img/logofooter.png" />
+      </div>
+      <div class="sectioninformation-links">
+        <h3>Link Utili</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="chi-siamo.html">Chi Siamo</a></li>
+          <li><a href="recensioni.html" target="_new">Recensioni</a></li>
+        </ul>
+      </div>
+
+      <div class="sectioninformation-opening-hours">
+        <h3>Orari di Apertura</h3>
+        <p>Mar - Dom: 6:30 - 10:00</p>
+      </div>
+      <div class="sectioninformation-social-icons">
+        <h3>Seguici</h3>
+        <a href="#"
+          ><img
+            src="img/facebook-1-svgrepo-com.png"
+            alt="Facebook"
+            class="social-icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="img/instagram-1-svgrepo-com.png"
+            alt="Instagram"
+            class="social-icon"
+        /></a>
+        <a href="#"
+          ><img
+            src="img/twitter-color-svgrepo-com.png"
+            alt="Twitter"
+            class="social-icon"
+        /></a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Pizzeria del Buon Gusto. Tutti i diritti riservati.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Aggiunge la classe "header-scrolled" all'header quando si scorre in basso
+      window.onscroll = function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+      };
+
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const backgroundImage = document.querySelector(".background-image");
+      });
+
+      // menu a tendina
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // Apre/chiude il menu al clic del bottone
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.style.display =
+            mobileMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Nasconde il menu cliccando fuori da esso
+        document.addEventListener("click", (event) => {
+          if (
+            !mobileMenu.contains(event.target) &&
+            event.target !== menuToggle
+          ) {
+            mobileMenu.style.display = "none";
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const columns = document.querySelectorAll(".column");
+
+        // Configura l'osservatore con il callback
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Quando l'elemento entra in vista
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              } else {
+                // Quando l'elemento esce dalla vista, resettare lo stile
+                entry.target.style.opacity = 0;
+                entry.target.style.transform = "translateY(50px)";
+              }
+            });
+          },
+          { threshold: 0.1 }
+        ); // threshold basso per attivare subito l'animazione
+
+        // Applica l'osservatore a ogni colonna
+        columns.forEach((column) => {
+          observer.observe(column);
+        });
+      });
+    </script>
+  </body>
+</html>
