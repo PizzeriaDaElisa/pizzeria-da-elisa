@@ -1604,6 +1604,7 @@ h1 {
   gap: 15px; /* Spaziatura tra gli elementi */
   margin-bottom: 150px;
   margin-top: 100px;
+  padding-top:  10px;
 }
 
 .main-content12 {
