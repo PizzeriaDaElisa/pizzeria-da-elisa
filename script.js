@@ -90,32 +90,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//coockies
+// Seleziona il titolo
+const title = document.querySelector('.extra-content h1');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cookieBanner = document.getElementById("cookie-banner");
-  const acceptCookiesButton = document.getElementById("accept-cookies");
-  const rejectCookiesButton = document.getElementById("reject-cookies");
+// Funzione per aggiornare la larghezza del bordo in base allo scorrimento
+function updateBorderWidth() {
+  const rect = title.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
-  // Controlla se l'utente ha già accettato o rifiutato i cookie
-  if (
-    !localStorage.getItem("cookiesAccepted") &&
-    !localStorage.getItem("cookiesRejected")
-  ) {
-    cookieBanner.style.display = "block";
-  }
+  // Calcola la percentuale di visibilità del titolo rispetto al viewport
+  const visibility = Math.max(0, Math.min(1, 1 - rect.top / windowHeight));
 
-  // Nascondi il banner e memorizza il consenso quando l'utente accetta i cookie
-  acceptCookiesButton.addEventListener("click", () => {
-    localStorage.setItem("cookiesAccepted", "true");
-    localStorage.removeItem("cookiesRejected"); // Rimuove eventuali rifiuti precedenti
-    cookieBanner.style.display = "none";
-  });
+  // Imposta la larghezza del bordo in base alla visibilità (0% a 100%)
+  title.style.setProperty('--border-width', `${visibility * 100}%`);
+}
 
-  // Nascondi il banner e memorizza il rifiuto quando l'utente rifiuta i cookie
-  rejectCookiesButton.addEventListener("click", () => {
-    localStorage.setItem("cookiesRejected", "true");
-    localStorage.removeItem("cookiesAccepted"); // Rimuove eventuali accettazioni precedenti
-    cookieBanner.style.display = "none";
-  });
+// Aggiungi un listener allo scorrimento
+window.addEventListener('scroll', updateBorderWidth);
+
+// Imposta la larghezza iniziale del bordo (opzionale)
+updateBorderWidth();
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Trova l'elemento home-section
+  const homeSection = document.querySelector('.home-section');
+  // Aggiungi la classe animate dopo un breve ritardo
+  setTimeout(() => {
+    homeSection.classList.add('animate');
+  }, 200); // Puoi regolare il ritardo se necessario
 });

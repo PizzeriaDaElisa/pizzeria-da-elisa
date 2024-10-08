@@ -779,24 +779,18 @@ footer {
 /* Stile per la sezione Home */
 /* Stile per la sezione Home */
 .home-section {
-  background-color: #f7f7f7;
-  /* Sfondo chiaro per un look moderno e pulito */
+  background-color: #f4f4f4;
+
   color: #333;
-  /* Testo scuro per un contrasto elegante */
+
   padding: 50px 30px;
-  /* Spaziatura interna maggiore */
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  /* Bordi leggeri */
-  border-radius: 15px;
-  /* Angoli arrotondati */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  /* Ombra più morbida */
-  max-width: 45%;
+  max-width: 100%;
   /* Larghezza massima per mantenere il testo leggibile */
-  margin: 50px 20px;
+  margin: 50px 0;
   /* Centra la sezione con margine superiore */
   text-align: center;
   /* Testo centrato */
+  box-shadow: none;
 }
 
 /* Stile per il titolo */
@@ -812,7 +806,7 @@ footer {
 }
 
 /* Stile per il paragrafo */
-.home-section p {
+.home-section li {
   font-size: 1.2rem;
   /* Dimensione del testo */
   line-height: 1.6;
@@ -820,19 +814,11 @@ footer {
   margin: 10px auto;
   /* Margine verticale */
   padding: 10px 20px;
-  /* Padding interno */
-  background: linear-gradient(
-    90deg,
-    rgba(217, 83, 79, 0.2),
-    rgba(92, 184, 92, 0.2)
-  );
-  /* Leggero gradiente di sfondo */
-  border-left: 3px solid #d32f2f;
   /* Bordo laterale colorato */
   border-radius: 5px;
   /* Bordi arrotondati */
+  text-align: center;
 }
-
 /* Aggiunta di effetti su hover */
 .home-section:hover {
   transform: translateY(-5px);
@@ -840,23 +826,33 @@ footer {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Contenitore principale per la sezione Home */
-.home-container {
-  display: flex;
-  /* Usa Flexbox per mettere i div uno accanto all'altro */
-  justify-content: space-between;
-  /* Spazia gli elementi */
-  padding: 20px;
-}
-
-/* Sezione principale di benvenuto */
 .home-section {
-  width: 50%;
+  width: 100%;
   /* Occupazione del 50% della larghezza */
   padding: 20px;
   box-sizing: border-box;
 }
 
+.home-section.animate {
+  animation: zoomIn 0.8s ease forwards; /* Applica l'animazione */
+}
+
+/* Definizione dell'animazione */
+@keyframes zoomIn {
+  0% {
+    opacity: 0; /* Inizia invisibile */
+    transform: scale(0.8); /* Si riduce leggermente */
+    background-color: rgba(255, 255, 255, 0); /* Sfondo trasparente */
+  }
+  50% {
+    background-color: rgba(247, 247, 247, 0.8); /* Sfondo leggermente visibile */
+  }
+  100% {
+    opacity: 1; /* Diventa visibile */
+    transform: scale(1); /* Torna alla dimensione originale */
+    background-color: #f4f4f4; /* Sfondo finale */
+  }
+}
 @media (max-width: 768px) {
   .home-container {
     align-self: auto;
@@ -872,46 +868,7 @@ footer {
   }
 }
 
-/* Nuovo div aggiunto a destra */
-.extra-content {
-  width: 50%;
-  /* Occupazione del 50% della larghezza */
-  padding: 40px;
-  box-sizing: border-box;
-  /* Considera padding nel calcolo delle dimensioni */
-  background-color: #f9f9f9;
-  /* Colore di sfondo leggero */
-  border-left: 5px solid #d32f2f;
-  /* Aggiunta di un bordo colorato per separazione */
-  border-radius: 10px;
-  /* Bordo arrotondato */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /* Aggiunta di un'ombra leggera */
-  margin-top: 53px;
-  max-height: 525px;
-}
 
-/* Titolo del nuovo contenuto */
-.extra-content h1 {
-  color: #d32f2f;
-  /* Colore del titolo in rosso */
-  font-weight: 700;
-  margin-bottom: 15px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #000000;
-}
-
-/* Stile del testo */
-.extra-content h3 {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 10px;
-  color: #2d2d2d;
-}
-
-.pizza-svg {
-  margin-bottom: 10px;
-}
 
 .btnrec {
   background-color: #f8f9fa;
@@ -1545,4 +1502,90 @@ h1 {
   border-radius: 30%;
   padding: 20px;
   z-index: 1002; /* Assicurati che sia sopra le immagini */
+}
+
+
+.extra-content {
+  width: 100%;
+  background-color: #f4f4f4;
+  margin-top: 53px;
+  justify-content: center;
+  height: auto; /* Rimuove l'altezza fissa per una maggiore flessibilità */
+  max-height: 525px;
+  display: flex; /* Allinea gli elementi in una riga per schermi grandi */
+  flex-direction: row; /* Direzione degli elementi da sinistra a destra */
+  align-items: center; /* Allinea verticalmente */
+  gap: 15px; /* Spaziatura tra gli elementi */
+  margin-bottom: 150px;
+  margin-top:150px;
+}
+
+.extra-content h1 {
+  color: #d32f2f;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  margin-bottom: 50px;
+}
+
+.extra-content h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--border-width, 0%); /* Utilizza la variabile CSS per la larghezza */
+  height: 2px;
+  background-color: black;
+  transform: translateX(-50%); /* Centrato */
+  transition: width 0.5s ease; /* Transizione fluida per la larghezza */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impasti-grid {
+  display: flex; /* Disposizione degli elementi interni in riga */
+  flex-direction: row; /* Direzione orizzontale */
+  align-items: center; /* Allineamento verticale */
+  gap: 60px; /* Spaziatura tra le icone e le descrizioni */
+  white-space: nowrap; /* Evita l'andare a capo */
+}
+
+.pizza-svg {
+  display: flex;
+  align-items: center;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  .extra-content {
+    flex-direction: column; /* Cambia la direzione a colonna per schermi piccoli */
+    align-items: center; /* Allinea tutti gli elementi al centro */
+    padding: 20px; /* Aggiungi padding per spaziatura su mobile */
+  }
+
+  .extra-content h1 {
+    width: 100%; /* Rende il titolo a larghezza piena su mobile */
+    margin-bottom: 30px; /* Spaziatura inferiore per separazione */
+  }
+
+  .impasti-grid {
+    flex-direction: column; /* Dispone le icone e le descrizioni in colonna */
+    gap: 30px; /* Spaziatura ridotta tra le sezioni */
+  }
+
+  .pizza-svg, .description-container {
+    flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
+    justify-content: center; /* Centrare su mobile */
+  }
 }
