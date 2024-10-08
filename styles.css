@@ -1572,6 +1572,7 @@ h1 {
     flex-direction: column; /* Cambia la direzione a colonna per schermi piccoli */
     align-items: center; /* Allinea tutti gli elementi al centro */
     padding: 20px; /* Aggiungi padding per spaziatura su mobile */
+    padding-bottom: 150px;
   }
 
   .extra-content h1 {
@@ -1602,7 +1603,7 @@ h1 {
   align-items: center; /* Allinea verticalmente */
   gap: 15px; /* Spaziatura tra gli elementi */
   margin-bottom: 150px;
-  margin-top: 170px;
+  margin-top: 100px;
 }
 
 .main-content12 {
