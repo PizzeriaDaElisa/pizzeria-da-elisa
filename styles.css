@@ -1525,7 +1525,7 @@ h1 {
   padding-bottom: 30px;
   position: relative;
   overflow: hidden;
-  width: 60%;
+  width: 80%;
   margin-bottom: 50px;
 }
 
@@ -1585,6 +1585,70 @@ h1 {
   }
 
   .pizza-svg, .description-container {
+    flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
+    justify-content: center; /* Centrare su mobile */
+  }
+}
+
+.extra-content12 {
+  width: 100%;
+  background-color: #f4f4f4;
+  margin-top: 53px;
+  justify-content: center;
+  height: auto; /* Rimuove l'altezza fissa per una maggiore flessibilità */
+  max-height: 525px;
+  display: flex; /* Allinea gli elementi in una riga per schermi grandi */
+  flex-direction: row; /* Direzione degli elementi da sinistra a destra */
+  align-items: center; /* Allinea verticalmente */
+  gap: 15px; /* Spaziatura tra gli elementi */
+  margin-bottom: 150px;
+  margin-top: 100px;
+}
+
+.main-content12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impasti-grid12 {
+  display: flex; /* Disposizione degli elementi interni in riga */
+  flex-direction: row; /* Direzione orizzontale */
+  align-items: center; /* Allineamento verticale */
+  gap: 60px; /* Spaziatura tra le icone e le descrizioni */
+  white-space: nowrap; /* Evita l'andare a capo */
+}
+
+.pizza-svg12 {
+  display: flex;
+  align-items: center;
+}
+
+.description-container12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 768px) {
+  .extra-content12 {
+    flex-direction: column; /* Cambia la direzione a colonna per schermi piccoli */
+    align-items: center; /* Allinea tutti gli elementi al centro */
+    padding: 20px; /* Aggiungi padding per spaziatura su mobile */
+  }
+
+  .extra-content12 h1 {
+    width: 100%; /* Rende il titolo a larghezza piena su mobile */
+    margin-bottom: 30px; /* Spaziatura inferiore per separazione */
+  }
+
+  .impasti-grid12 {
+    flex-direction: column; /* Dispone le icone e le descrizioni in colonna */
+    gap: 30px; /* Spaziatura ridotta tra le sezioni */
+  }
+
+  .pizza-svg12, .description-container12 {
     flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
     justify-content: center; /* Centrare su mobile */
   }

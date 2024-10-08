@@ -90,28 +90,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Seleziona il titolo
-const title = document.querySelector('.extra-content h1');
 
-// Funzione per aggiornare la larghezza del bordo in base allo scorrimento
+const title = document.querySelector('.extra-content h1');
 function updateBorderWidth() {
   const rect = title.getBoundingClientRect();
   const windowHeight = window.innerHeight;
-
-  // Calcola la percentuale di visibilità del titolo rispetto al viewport
   const visibility = Math.max(0, Math.min(1, 1 - rect.top / windowHeight));
-
-  // Imposta la larghezza del bordo in base alla visibilità (0% a 100%)
   title.style.setProperty('--border-width', `${visibility * 100}%`);
 }
-
-// Aggiungi un listener allo scorrimento
 window.addEventListener('scroll', updateBorderWidth);
-
-// Imposta la larghezza iniziale del bordo (opzionale)
 updateBorderWidth();
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   // Trova l'elemento home-section
@@ -121,3 +109,5 @@ document.addEventListener("DOMContentLoaded", function () {
     homeSection.classList.add('animate');
   }, 200); // Puoi regolare il ritardo se necessario
 });
+
+
