@@ -149,7 +149,7 @@ nav a:hover::after {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .header-container {
     flex-direction: row;
     /* Mantiene la direzione dell'header */
@@ -185,36 +185,47 @@ nav a:hover::after {
     font-size: 20px;
   }
 }
-
+/* Stile per il contenitore del carosello */
 .carousel {
-  padding-top: 80px;
-  position: relative;
-  /* Posizione relativa per gestire il posizionamento del div trasparente */
-  height: 400px;
-  /* Altezza del carosello */
-  overflow: hidden;
-  /* Nasconde eventuale overflow delle immagini */
-  border-bottom: 4px solid #d32f2f;
+  position: relative; /* Posizione relativa per il contenitore */
+  width: 100%; /* Imposta la larghezza del carosello */
+  height: 80vh; /* Imposta un'altezza fissa per il carosello */
+  overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
 }
 
-.carousel img {
-  width: 100%;
-  /* Le immagini occupano tutta la larghezza del contenitore */
-  display: block;
-  /* Evita lo spazio sotto le immagini */
-  height: 100%;
-  /* Le immagini occupano tutta l'altezza del contenitore */
-  object-fit: cover;
-  /* Ritaglia le immagini mantenendo le proporzioni */
+.video-bg {
+  width: 100%; /* Fai in modo che il video occupi tutta la larghezza */
+  height: 100%; /* Fai in modo che il video occupi tutta l'altezza */
+  object-fit: cover; /* Fai in modo che il video si adatti all'area senza distorsioni */
 }
+
+.carousel-text {
+  position: absolute; /* Posizione assoluta per il testo */
+  top: 60%; /* Centra verticalmente */
+  left: 50%; /* Centra orizzontalmente */
+  transform: translate(-50%, -50%); /* Offset per centrare esattamente */
+  color: white; /* Colore del testo */
+  text-align: center; /* Centra il testo */
+  z-index: 1; /* Assicura che il testo sia sopra il video */
+  background-color: #0000007a;
+  height: 100%;
+  width: 100%;
+  padding-top: 35vh;
+}
+
+.carousel-text h1 {
+  font-size: 2.5rem; /* Dimensione del titolo */
+  margin: 0; /* Rimuovi margine */
+}
+
+
 
 section {
   padding: 40px 20px;
-  margin: 10px auto;
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  max-width: 100%;
 }
 
 h2 {
@@ -264,7 +275,9 @@ h2 {
 }
 
 .menu-item img {
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  img-fit:cover;
   /* Larghezza dell'immagine al 100% del contenitore */
   border-radius: 8px 8px 0 0;
   /* Arrotonda solo la parte superiore dell'immagine */
@@ -280,6 +293,26 @@ h2 {
 .menu-item p {
   color: #333;
   /* Colore scuro per la descrizione */
+  text-justify: center;
+}
+
+.menu-item {
+  opacity: 0; /* Invisibile di default */
+  transform: translateX(-100px); /* Partenza da sinistra */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
+  margin: 10px; /* Spaziatura tra gli elementi */
+}
+
+/* Classe per l'entrata in vista */
+.menu-item.in-view {
+  opacity: 1; /* Diventa visibile */
+  transform: translateX(0); /* Si sposta nella posizione originale */
+}
+
+/* Classe per l'uscita dalla vista */
+.menu-item.out-of-view {
+  opacity: 0; /* Diventa invisibile */
+  transform: translateX(50px); /* Esce verso destra */
 }
 
 footer {
@@ -308,7 +341,7 @@ footer {
 }
 
 /* Media query per schermi più piccoli */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
     /* Disposizione in colonna per i dispositivi mobili */
@@ -323,16 +356,15 @@ footer {
 }
 
 /* Media query per schermi più larghi */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
     /* Disposizione in riga per schermi più larghi */
-    justify-content: space-around;
     /* Distribuisce lo spazio tra gli elementi */
   }
 
   .footer-content p {
-    margin: 0 15px;
+    margin: 0px 0px;
     /* Margine orizzontale per i paragrafi */
   }
 }
@@ -547,7 +579,7 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .about-contact {
     flex-direction: column;
     width: fit-content;
@@ -610,7 +642,7 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .extra-content {
     align-self: left;
     flex-direction: column;
@@ -710,7 +742,7 @@ footer {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .extra-content {
     align-self: left;
     flex-direction: column;
@@ -719,6 +751,7 @@ footer {
     width: 410px;
     margin-left: 5px;
   }
+
 
   .btnrec {
     background-color: #ffffff;
@@ -783,13 +816,11 @@ footer {
 
   color: #333;
 
-  padding: 50px 30px;
+  padding: 30px 0;
   max-width: 100%;
   /* Larghezza massima per mantenere il testo leggibile */
-  margin: 50px 0;
+  margin: 100px 0;
   /* Centra la sezione con margine superiore */
-  text-align: center;
-  /* Testo centrato */
   box-shadow: none;
 }
 
@@ -799,10 +830,12 @@ footer {
   /* Dimensione del font per il titolo */
   font-weight: 700;
   /* Grassetto */
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   /* Spaziatura inferiore */
   color: #d32f2f;
   /* Rosso del brand */
+  text-align: center;
+  width: 100%;
 }
 
 /* Stile per il paragrafo */
@@ -811,13 +844,11 @@ footer {
   /* Dimensione del testo */
   line-height: 1.6;
   /* Altezza della riga per una migliore leggibilità */
-  margin: 10px auto;
-  /* Margine verticale */
-  padding: 10px 20px;
-  /* Bordo laterale colorato */
-  border-radius: 5px;
+
+  padding: 20px 0px;
   /* Bordi arrotondati */
   text-align: center;
+  
 }
 /* Aggiunta di effetti su hover */
 .home-section:hover {
@@ -829,30 +860,40 @@ footer {
 .home-section {
   width: 100%;
   /* Occupazione del 50% della larghezza */
-  padding: 20px;
   box-sizing: border-box;
 }
 
-.home-section.animate {
-  animation: zoomIn 0.8s ease forwards; /* Applica l'animazione */
-}
-
-/* Definizione dell'animazione */
-@keyframes zoomIn {
+@keyframes slideInLeft {
   0% {
-    opacity: 0; /* Inizia invisibile */
-    transform: scale(0.8); /* Si riduce leggermente */
-    background-color: rgba(255, 255, 255, 0); /* Sfondo trasparente */
-  }
-  50% {
-    background-color: rgba(247, 247, 247, 0.8); /* Sfondo leggermente visibile */
+    opacity: 0;
+    transform: translateX(-100px); /* Parte da sinistra */
   }
   100% {
-    opacity: 1; /* Diventa visibile */
-    transform: scale(1); /* Torna alla dimensione originale */
-    background-color: #f4f4f4; /* Sfondo finale */
+    opacity: 1;
+    transform: translateX(0); /* Arriva nella posizione originale */
   }
 }
+
+/* Stile di base per il paragrafo nascosto prima dell'animazione */
+.home-section li {
+  opacity: 0; /* Inizia invisibile */
+  transform: translateX(-100px); /* Fuori dallo schermo a sinistra */
+  transition: all 0.5s ease-in-out; /* Aggiunge un effetto di transizione */
+}
+
+/* Quando l'animazione è attivata */
+.home-section li.visible {
+  animation: slideInLeft 0.6s ease forwards;
+  opacity: 1;
+  transform: translateX(0); /* Posizione finale */
+}
+
+.immagineprincipale {
+  width: 300px;
+  height: fit-content;
+  float: right;
+}
+
 @media (max-width: 768px) {
   .home-container {
     align-self: auto;
@@ -868,7 +909,46 @@ footer {
   }
 }
 
+.pizza-svg12, .description-container12 {
+  opacity: 0; /* Invisibile di default */
+  transform: translateY(50px); /* Partenza dal basso */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
+}
 
+/* Entrata in vista */
+.pizza-svg12.in-view,
+.description-container12.in-view {
+  opacity: 1; /* Diventa visibile */
+  transform: translateY(0); /* Si sposta nella posizione originale */
+}
+
+/* Uscita verso il basso */
+.pizza-svg12.out-of-view,
+.description-container12.out-of-view {
+  opacity: 0; /* Diventa invisibile */
+  transform: translateY(50px); /* Torna verso il basso */
+}
+
+
+.pizza-svg, .description-container {
+  opacity: 0; /* Invisibile di default */
+  transform: translateY(50px); /* Partenza dal basso */
+  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
+}
+
+/* Entrata in vista */
+.pizza-svg.in-view,
+.description-container.in-view {
+  opacity: 1; /* Diventa visibile */
+  transform: translateY(0); /* Si sposta nella posizione originale */
+}
+
+/* Uscita verso il basso */
+.pizza-svg.out-of-view,
+.description-container.out-of-view {
+  opacity: 0; /* Diventa invisibile */
+  transform: translateY(50px); /* Torna verso il basso */
+}
 
 .btnrec {
   background-color: #f8f9fa;
@@ -897,6 +977,7 @@ footer {
     margin-left: 5px;
     max-height: fit-content;
   }
+
 
   .btnrec {
     border: none;
@@ -940,7 +1021,7 @@ footer {
   /* Centra gli elementi */
   max-width: 100%;
   /* Larghezza massima del contenitore */
-  margin: 20px 50px;
+  margin: 20px;
   /* Margine verticale */
   padding: 30px;
   /* Padding per il contenitore */
@@ -952,7 +1033,7 @@ footer {
   /* Sfondo bianco */
 }
 
-/* Stile del carosello */
+/* Stile del  */
 .carosellochallenge {
   position: relative;
   /* Posizione relativa per i controlli */
@@ -1077,6 +1158,27 @@ button.next:hover {
 
   .carousel-content {
     height: auto;
+    /* Altezza automatica per immagini su dispositivi mobili */
+  }
+}
+
+@media (max-width: 320px) {
+  .carosellochallenge-container {
+    align-items: center;
+    /* Centra gli elementi */
+    width: 100%;
+    margin-left: 5px;
+  }
+
+  .carosellochallenge {
+    width: 100%;
+    /* Larghezza completa su schermi piccoli */
+    height: 190px;
+  }
+
+  .carousel-content {
+    width: 100%;
+    height: 100%;
     /* Altezza automatica per immagini su dispositivi mobili */
   }
 }
@@ -1275,7 +1377,7 @@ h1 {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width:430px) {
   .background-image {
     height: 150px;
     /* Ulteriore riduzione dell'altezza per smartphone */
@@ -1309,7 +1411,7 @@ h1 {
 .sectioninformation-social-icons {
   flex: 1;
   /* Ogni sezione occupa uno spazio uguale */
-  margin: 0 20px;
+  margin: 0 0px;
   /* Margine orizzontale */
 }
 
@@ -1364,7 +1466,7 @@ h1 {
 }
 
 /* Media query per dispositivi mobili */
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .sectioninformation {
     flex-direction: column;
     /* Dispone gli elementi uno sotto l'altro */

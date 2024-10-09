@@ -111,3 +111,116 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleziona tutti gli elementi della lista
+  const elements = document.querySelectorAll(".home-section li");
+
+  // Definisci l'opzione per il nostro observer (attivato quando il 30% è visibile)
+  const options = {
+    threshold: 0.3
+  };
+
+  // Crea un observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Aggiunge la classe visibile se l'elemento è nel viewport
+        entry.target.classList.add('visible');
+        // Disattiva l'osservatore per evitare ripetizioni
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  // Osserva ogni elemento
+  elements.forEach(element => observer.observe(element));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleziona tutte le icone e le descrizioni
+  const items = document.querySelectorAll(".pizza-svg12, .description-container12");
+
+  // Crea l'Intersection Observer per monitorare gli elementi
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Aggiunge la classe 'in-view' se l'elemento è visibile
+          entry.target.classList.add("in-view");
+          entry.target.classList.remove("out-of-view");
+        } else {
+          // Aggiunge la classe 'out-of-view' quando l'elemento esce dalla viewport
+          entry.target.classList.remove("in-view");
+          entry.target.classList.add("out-of-view");
+        }
+      });
+    },
+    {
+      threshold: 0.3, // Trigger dell'animazione al 30% di visibilità
+    }
+  );
+
+  // Osserva ogni elemento con l'Observer
+  items.forEach((item) => observer.observe(item));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleziona tutte le icone e le descrizioni
+  const items = document.querySelectorAll(".pizza-svg, .description-container");
+
+  // Crea l'Intersection Observer per monitorare gli elementi
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Aggiunge la classe 'in-view' se l'elemento è visibile
+          entry.target.classList.add("in-view");
+          entry.target.classList.remove("out-of-view");
+        } else {
+          // Aggiunge la classe 'out-of-view' quando l'elemento esce dalla viewport
+          entry.target.classList.remove("in-view");
+          entry.target.classList.add("out-of-view");
+        }
+      });
+    },
+    {
+      threshold: 0.3, // Trigger dell'animazione al 30% di visibilità
+    }
+  );
+
+  // Osserva ogni elemento con l'Observer
+  items.forEach((item) => observer.observe(item));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleziona tutti gli elementi del menu
+  const items = document.querySelectorAll(".menu-item");
+
+  // Crea l'Intersection Observer per monitorare gli elementi
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Aggiunge la classe 'in-view' se l'elemento è visibile
+          entry.target.classList.add("in-view");
+          entry.target.classList.remove("out-of-view");
+        } else {
+          // Aggiunge la classe 'out-of-view' quando l'elemento esce dalla viewport
+          entry.target.classList.remove("in-view");
+          entry.target.classList.add("out-of-view");
+        }
+      });
+    },
+    {
+      threshold: 0.8, // Trigger dell'animazione al 30% di visibilità
+    }
+  );
+
+  // Osserva ogni elemento con l'Observer
+  items.forEach((item) => observer.observe(item));
+});
+
+
