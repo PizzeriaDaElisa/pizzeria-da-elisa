@@ -1019,17 +1019,15 @@ footer {
   /* Colonna per posizionare il carosello sopra il testo */
   align-items: center;
   /* Centra gli elementi */
-  max-width: 100%;
+  width: 100%;
   /* Larghezza massima del contenitore */
-  margin: 20px;
   /* Margine verticale */
   padding: 30px;
   /* Padding per il contenitore */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   /* Ombra leggera per profondità */
   border-radius: 8px;
   /* Angoli arrotondati */
-  background-color: #ffffff;
+  background-color: #cfcfcf;
   /* Sfondo bianco */
 }
 
@@ -1580,11 +1578,11 @@ h1 {
   transform: translateY(-50%);
   font-size: 2em;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
   border-radius: 30%;
-  padding: 20px;
+  padding: 5px;
   z-index: 1002; /* Assicurati che sia sopra le immagini */
 }
 
@@ -1595,11 +1593,11 @@ h1 {
   transform: translateY(-50%);
   font-size: 2em;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
   border-radius: 30%;
-  padding: 20px;
+  padding: 5px;
   z-index: 1002; /* Assicurati che sia sopra le immagini */
 }
 
@@ -1753,4 +1751,31 @@ h1 {
     flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
     justify-content: center; /* Centrare su mobile */
   }
+}
+
+.image-gallery-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+}
+
+.image-gallery {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-wrapper {
+  display: flex;
+  will-change: transform; /* Ottimizzazione per prestazioni */
+}
+
+.gallery-image {
+  flex: 0 0 300px; /* Larghezza uniforme per tutte le immagini */
+  height: 200px; /* Altezza fissa per uniformare le immagini */
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 5px; /* Spazio tra le immagini */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

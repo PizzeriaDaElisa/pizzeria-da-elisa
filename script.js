@@ -61,35 +61,6 @@ window.onscroll = function () {
   }
 };
 
-window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  const backgroundImage = document.querySelector(".background-image");
-
-  // Modifica la posizione dell'immagine di sfondo in base alla posizione di scorrimento
-  backgroundImage.style.backgroundPosition = `center ${
-    -scrollPosition * 0.5
-  }px`; // Inverti il segno per movimento inverso
-});
-
-// menu a tendina
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  // Apre/chiude il menu al clic del bottone
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.style.display =
-      mobileMenu.style.display === "block" ? "none" : "block";
-  });
-
-  // Nasconde il menu cliccando fuori da esso
-  document.addEventListener("click", (event) => {
-    if (!mobileMenu.contains(event.target) && event.target !== menuToggle) {
-      mobileMenu.style.display = "none";
-    }
-  });
-});
-
 
 const title = document.querySelector('.extra-content h1');
 function updateBorderWidth() {
@@ -222,5 +193,77 @@ document.addEventListener("DOMContentLoaded", () => {
   // Osserva ogni elemento con l'Observer
   items.forEach((item) => observer.observe(item));
 });
+
+
+const images = [
+  'food1.jpg',
+  'food2.jpg',
+  'food3.jpg',
+  'food4ù.jpg',
+  'food5.jpg',
+  'food6.jpg',
+  'food7.jpg',
+  'food8.jpg',
+  'food9.jpg',
+  'food10.jpg'
+]; // Array di immagini
+
+const galleryWrapper = document.querySelector('.gallery-wrapper');
+let currentTranslate = 0; // Posizione corrente della galleria
+const imageWidth = 310; // Larghezza totale di ogni immagine con margini inclusi
+
+// Funzione per creare una nuova sequenza randomica delle immagini
+function shuffleImages() {
+  const shuffled = images.slice(); // Copia dell'array di immagini
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Funzione per aggiungere immagini alla galleria
+function addImages() {
+  const shuffledImages = shuffleImages();
+  shuffledImages.forEach((imgSrc) => {
+    const imgElement = document.createElement('img');
+    imgElement.src = imgSrc;
+    imgElement.alt = 'Immagine galleria';
+    imgElement.classList.add('gallery-image');
+    galleryWrapper.appendChild(imgElement);
+  });
+}
+
+// Funzione per avviare lo scorrimento continuo della galleria
+function startContinuousScroll() {
+  function step() {
+    // Calcola la nuova posizione di traslazione
+    currentTranslate -= 0.3; // Riduci la posizione per creare l'effetto di movimento
+    galleryWrapper.style.transform = `translateX(${currentTranslate}px)`;
+
+    // Controlla se la prima immagine è completamente fuori dalla vista e rimuovila
+    const firstImage = galleryWrapper.querySelector('.gallery-image');
+    if (firstImage && firstImage.getBoundingClientRect().right < 0) {
+      galleryWrapper.removeChild(firstImage);
+      currentTranslate += imageWidth; // Compensa lo spostamento dell'immagine rimossa
+    }
+
+    // Aggiungi una nuova immagine quando lo spazio è disponibile
+    if (galleryWrapper.scrollWidth - Math.abs(currentTranslate) < window.innerWidth) {
+      addImages(); // Aggiungi un nuovo set di immagini randomiche
+    }
+
+    requestAnimationFrame(step); // Richiama la funzione per il prossimo frame
+  }
+
+  step(); // Avvia l'animazione
+}
+
+// Inizializza la galleria con un set di immagini
+addImages();
+addImages(); // Aggiungiamo alcune immagini iniziali per riempire lo spazio
+
+// Avvia lo scorrimento continuo
+startContinuousScroll();
 
 
