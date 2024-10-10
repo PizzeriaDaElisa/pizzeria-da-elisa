@@ -12,6 +12,47 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+.caromenu {
+    display: none; /* Nasconde la finestra modale di default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assicura che la modale sia sopra gli altri contenuti */
+}
+
+#caroImage {
+    max-width: 90%; /* Limita la larghezza massima dell'immagine */
+    max-height: 90%; /* Limita l'altezza massima dell'immagine */
+    transition: transform 0.2s ease; /* Transizione per lo zoom */
+    cursor: pointer; /* Cambia il cursore per indicare che è cliccabile */
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-arrow3 {
+    left: 10px; /* Posizione del pulsante precedente */
+}
+
+.right-arrow3 {
+    right: 10px; /* Posizione del pulsante successivo */
+}
+
+    </style>
   </head>
 
   <body>
@@ -54,22 +95,19 @@
     <div class="carousel">
       <img src="pizza1.jpeg" alt="Pizza 1" />
       <div class="overlay-text"></div>
-    </div>
-    <section>
+  </div>
+  
+  <section>
       <!-- Pulsante per aprire la finestra modale -->
       <button class="open-modal-button">Vedi menù cartaceo</button>
-    </section>
-    <!-- Finestra modale -->
-    <div class="caromenu" id="caromenu">
+  </section>
+  
+  <!-- Finestra modale -->
+  <div class="caromenu" id="caromenu">
       <button class="arrow left-arrow3" id="prevButton">&#10094;</button>
-      <img
-        id="caroImage"
-        src="immagine_menu1.jpeg"
-        alt="Immagine del Menu"
-      />
-
+      <img id="caroImage" src="immagine_menu1.jpeg" alt="Immagine del Menu" />
       <button class="arrow right-arrow3" id="nextButton">&#10095;</button>
-    </div>
+  </div>
 
     <section class="menu-section">
       <h2>Classiche</h2>
@@ -306,52 +344,66 @@
       });
 
       const caromenu = document.getElementById("caromenu");
-      const openModalButton = document.querySelector(".open-modal-button");
-      const caroImage = document.getElementById("caroImage");
-      const prevButton = document.getElementById("prevButton");
-      const nextButton = document.getElementById("nextButton");
+const openModalButton = document.querySelector(".open-modal-button");
+const caroImage = document.getElementById("caroImage");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
 
-      // Lista delle immagini
-      const images = [
-        "immagine_menu1.jpeg",
-        "immagine_menu2.jpeg",
-        "immagine_menu3.jpeg",
-        "immagine_menu4.jpeg",
-      ];
+// Lista delle immagini
+const images = [
+    "immagine_menu0.png",
+    "immagine_menu1.png",
+    "immagine_menu2.png" // Aggiungi altre immagini se necessario
+];
 
-      let currentIndex = 0;
+let currentIndex = 0;
 
-      // Apri il carosello
-      openModalButton.addEventListener("click", () => {
-        caromenu.style.display = "flex";
-        updateImage();
-      });
+// Apri il carosello
+openModalButton.addEventListener("click", () => {
+    caromenu.style.display = "flex";
+    updateImage();
+});
 
-      // Aggiorna l'immagine
-      function updateImage() {
-        caroImage.src = images[currentIndex];
-      }
+// Aggiorna l'immagine
+function updateImage() {
+    caroImage.src = images[currentIndex];
+    caroImage.style.transform = "scale(1)"; // Reset zoom
+}
 
-      // Chiudi il carosello quando si clicca fuori dall'immagine
-      caromenu.addEventListener("click", (event) => {
-        if (event.target === caromenu) {
-          caromenu.style.display = "none";
-        }
-      });
+// Chiudi il carosello quando si clicca fuori dall'immagine
+caromenu.addEventListener("click", (event) => {
+    if (event.target === caromenu) {
+        caromenu.style.display = "none";
+    }
+});
 
-      // Gestione del click sul pulsante precedente
-      prevButton.addEventListener("click", (event) => {
-        event.stopPropagation(); // Impedisce la chiusura del carosello
-        currentIndex = (currentIndex - 1 + images.length) % images.length; // Scorrimento circolare
-        updateImage();
-      });
+// Gestione del click sul pulsante precedente
+prevButton.addEventListener("click", (event) => {
+    event.stopPropagation(); // Impedisce la chiusura del carosello
+    currentIndex = (currentIndex - 1 + images.length) % images.length; // Scorrimento circolare
+    updateImage();
+});
 
-      // Gestione del click sul pulsante successivo
-      nextButton.addEventListener("click", (event) => {
-        event.stopPropagation(); // Impedisce la chiusura del carosello
-        currentIndex = (currentIndex + 1) % images.length; // Scorrimento circolare
-        updateImage();
-      });
+// Gestione del click sul pulsante successivo
+nextButton.addEventListener("click", (event) => {
+    event.stopPropagation(); // Impedisce la chiusura del carosello
+    currentIndex = (currentIndex + 1) % images.length; // Scorrimento circolare
+    updateImage();
+});
+
+// Zoom in e zoom out
+let isZoomedIn = false;
+
+caroImage.addEventListener("click", () => {
+    if (isZoomedIn) {
+        caroImage.style.transform = "scale(1)"; // Ripristina la dimensione originale
+        isZoomedIn = false;
+    } else {
+        caroImage.style.transform = "scale(2)"; // Zoom in
+        isZoomedIn = true;
+    }
+});
+
     </script>
   </body>
 </html>

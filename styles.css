@@ -1062,9 +1062,6 @@ footer {
   height: 100%;
   /* Mantiene le proporzioni */
   display: block;
-  /* Evita spazi indesiderati */
-  transition: opacity 0.5s ease-in-out;
-  /* Transizione per un effetto di dissolvenza */
 }
 
 /* Stile dei controlli */
@@ -1142,6 +1139,8 @@ button.next:hover {
   /* Colore di sfondo al passaggio del mouse */
 }
 
+
+
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
   .carosellochallenge-container {
@@ -1163,23 +1162,21 @@ button.next:hover {
 }
 
 @media (max-width: 320px) {
-  .carosellochallenge-container {
-    align-items: center;
-    /* Centra gli elementi */
-    width: 100%;
-    margin-left: 5px;
-  }
 
   .carosellochallenge {
-    width: 100%;
-    /* Larghezza completa su schermi piccoli */
-    height: 190px;
+    width: 100%; /* Larghezza completa su schermi piccoli */
+    height: 190px; /* Altezza fissa per uniformare il carosello */
   }
 
   .carousel-content {
-    width: 100%;
-    height: 100%;
-    /* Altezza automatica per immagini su dispositivi mobili */
+    width: 100%; /* Adatta la larghezza del contenitore */
+    height: 100%; /* Altezza al 100% del carosello */
+  }
+
+  .carousel-content img {
+    width: 100%; /* Mantiene la larghezza piena */
+    height: 190px; /* Altezza fissa per tutte le immagini */
+    object-fit: cover; /* Taglia l'immagine se necessario mantenendo il rapporto */
   }
 }
 
