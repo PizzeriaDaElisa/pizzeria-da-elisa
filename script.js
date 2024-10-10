@@ -61,6 +61,35 @@ window.onscroll = function () {
   }
 };
 
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const backgroundImage = document.querySelector(".background-image");
+
+  // Modifica la posizione dell'immagine di sfondo in base alla posizione di scorrimento
+  backgroundImage.style.backgroundPosition = `center ${
+    -scrollPosition * 0.5
+  }px`; // Inverti il segno per movimento inverso
+});
+
+// menu a tendina
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Apre/chiude il menu al clic del bottone
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === "block" ? "none" : "block";
+  });
+
+  // Nasconde il menu cliccando fuori da esso
+  document.addEventListener("click", (event) => {
+    if (!mobileMenu.contains(event.target) && event.target !== menuToggle) {
+      mobileMenu.style.display = "none";
+    }
+  });
+});
+
 
 const title = document.querySelector('.extra-content h1');
 function updateBorderWidth() {
