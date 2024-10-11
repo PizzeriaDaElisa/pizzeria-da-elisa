@@ -208,8 +208,8 @@ nav a:hover::after {
     position: absolute; /* Posizione assoluta per il testo */
     top: 50%; /* Centrato verticalmente */
     left: 50%; /* Centrato orizzontalmente */
-    transform: translate(-50%, -50%); /* Offset per centrare esattamente */
     color: white; /* Colore del testo */
+   transform: translate(-50%, -50%); /* Offset per centrare esattamente */
     text-align: center; /* Centra il testo */
     z-index: 1; /* Assicura che il testo sia sopra il video */
     padding: 20px; /* Padding per il testo */
@@ -238,14 +238,13 @@ nav a:hover::after {
     position: absolute; /* Posizione assoluta per il testo */
     top: 30%; /* Centra verticalmente */
     left: 50%; /* Centra orizzontalmente */
-    transform: translate(-50%, -50%); /* Offset per centrare esattamente */
     color: white; /* Colore del testo */
     text-align: center; /* Centra il testo */
     z-index: 1; /* Assicura che il testo sia sopra il video */
     background-color: #0000007a;
     height: 100%;
     width: 100%;
-    padding-top: 35vh;
+    padding-top: 30vh;
   }
 }
 
