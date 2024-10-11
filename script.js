@@ -311,24 +311,3 @@ document.addEventListener("DOMContentLoaded", function() {
         carouselText.style.opacity = '1'; // Fai apparire il testo dopo un breve ritardo
     }, 1000);
 });
-// script.js
-document.addEventListener("DOMContentLoaded", function() {
-  const carouselText = document.querySelector('.carousel-text');
-
-  // Funzione per aggiornare la posizione e l'opacità del testo in base allo scorrimento della pagina
-  function updateTextPosition() {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-
-      // Calcola la traslazione in base allo scorrimento
-      const translateY = Math.min(scrollY / 5, 100); // Modifica il divisore per regolare l'effetto di traslazione
-      const opacity = Math.max(1 - scrollY / (windowHeight / 2), 0); // Calcola l'opacità in base allo scorrimento
-
-      // Applica le trasformazioni
-      carouselText.style.transform = `translate(-50%, calc(-50% + ${translateY}px))`;
-      carouselText.style.opacity = `${opacity}`;
-  }
-
-  // Aggiungi l'evento di scroll
-  window.addEventListener('scroll', updateTextPosition);
-});
