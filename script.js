@@ -61,16 +61,6 @@ window.onscroll = function () {
   }
 };
 
-window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  const backgroundImage = document.querySelector(".background-image");
-
-  // Modifica la posizione dell'immagine di sfondo in base alla posizione di scorrimento
-  backgroundImage.style.backgroundPosition = `center ${
-    -scrollPosition * 0.5
-  }px`; // Inverti il segno per movimento inverso
-});
-
 // menu a tendina
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
@@ -215,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.8, // Trigger dell'animazione al 30% di visibilità
+      threshold: 0.4, // Trigger dell'animazione al 30% di visibilità
     }
   );
 
@@ -296,3 +286,49 @@ addImages(); // Aggiungiamo alcune immagini iniziali per riempire lo spazio
 startContinuousScroll();
 
 
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselText = document.querySelector('.carousel-text');
+
+    // Imposta l'opacità iniziale
+    carouselText.style.opacity = '0';
+
+    // Funzione per aggiornare l'opacità in base allo scorrimento della pagina
+    function updateOpacity() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        
+        // Calcola l'opacità basata sullo scorrimento
+        const opacity = Math.min(scrollY / (windowHeight / 1.5), 1); // Modifica il divisore per regolare l'effetto
+        carouselText.style.opacity = `${opacity}`;
+    }
+
+    // Aggiungi l'evento di scroll
+    window.addEventListener('scroll', updateOpacity);
+
+    // Mostra il testo all'avvio
+    setTimeout(() => {
+        carouselText.style.opacity = '1'; // Fai apparire il testo dopo un breve ritardo
+    }, 1000);
+});
+// script.js
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselText = document.querySelector('.carousel-text');
+
+  // Funzione per aggiornare la posizione e l'opacità del testo in base allo scorrimento della pagina
+  function updateTextPosition() {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Calcola la traslazione in base allo scorrimento
+      const translateY = Math.min(scrollY / 5, 100); // Modifica il divisore per regolare l'effetto di traslazione
+      const opacity = Math.max(1 - scrollY / (windowHeight / 2), 0); // Calcola l'opacità in base allo scorrimento
+
+      // Applica le trasformazioni
+      carouselText.style.transform = `translate(-50%, calc(-50% + ${translateY}px))`;
+      carouselText.style.opacity = `${opacity}`;
+  }
+
+  // Aggiungi l'evento di scroll
+  window.addEventListener('scroll', updateTextPosition);
+});

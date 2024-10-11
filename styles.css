@@ -187,35 +187,67 @@ nav a:hover::after {
 }
 /* Stile per il contenitore del carosello */
 .carousel {
-  position: relative; /* Posizione relativa per il contenitore */
-  width: 100%; /* Imposta la larghezza del carosello */
-  height: 80vh; /* Imposta un'altezza fissa per il carosello */
-  overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
+    position: relative; /* Posizione relativa per il contenitore */
+    width: 100%; /* Imposta la larghezza del carosello */
+    height: 100vh; /* Imposta un'altezza fissa per il carosello */
+    overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
 }
 
 .video-bg {
-  width: 100%; /* Fai in modo che il video occupi tutta la larghezza */
-  height: 100%; /* Fai in modo che il video occupi tutta l'altezza */
-  object-fit: cover; /* Fai in modo che il video si adatti all'area senza distorsioni */
+    position: absolute; /* Posizionamento assoluto del video */
+    top: 50%; /* Centrato verticalmente */
+    left: 50%; /* Centrato orizzontalmente */
+    width: 100%; /* Fai in modo che il video occupi tutta la larghezza */
+    height: 100%; /* Fai in modo che il video occupi tutta l'altezza */
+    object-fit: cover; /* Fai in modo che il video si adatti all'area senza distorsioni */
+    transform: translate(-50%, -50%); /* Centra esattamente il video */
+    z-index: 0; /* Assicura che il video sia sotto il testo */
 }
 
 .carousel-text {
-  position: absolute; /* Posizione assoluta per il testo */
-  top: 60%; /* Centra verticalmente */
-  left: 50%; /* Centra orizzontalmente */
-  transform: translate(-50%, -50%); /* Offset per centrare esattamente */
-  color: white; /* Colore del testo */
-  text-align: center; /* Centra il testo */
-  z-index: 1; /* Assicura che il testo sia sopra il video */
-  background-color: #0000007a;
-  height: 100%;
-  width: 100%;
-  padding-top: 35vh;
+    position: absolute; /* Posizione assoluta per il testo */
+    top: 50%; /* Centrato verticalmente */
+    left: 50%; /* Centrato orizzontalmente */
+    transform: translate(-50%, -50%); /* Offset per centrare esattamente */
+    color: white; /* Colore del testo */
+    text-align: center; /* Centra il testo */
+    z-index: 1; /* Assicura che il testo sia sopra il video */
+    padding: 20px; /* Padding per il testo */
+    border-radius: 8px; /* Angoli arrotondati */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Transizione per movimento e opacità */
+    opacity: 1; /* Inizialmente visibile */
 }
 
 .carousel-text h1 {
-  font-size: 2.5rem; /* Dimensione del titolo */
-  margin: 0; /* Rimuovi margine */
+    font-size: 2.5rem; /* Dimensione del titolo */
+    margin: 0; /* Rimuovi margine */
+}
+
+.content {
+    padding: 20px; /* Aggiungi padding alla sezione di contenuto */
+}
+
+@media (max-width: 430px) {
+  .carousel {
+    position: relative; /* Posizione relativa per il contenitore */
+    width: 100%; /* Imposta la larghezza del carosello */
+    height: 70vh; /* Imposta un'altezza fissa per il carosello */
+    overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
+  }
+
+  .carousel-text {
+    position: absolute; /* Posizione assoluta per il testo */
+    top: 30%; /* Centra verticalmente */
+    left: 50%; /* Centra orizzontalmente */
+    transform: translate(-50%, -50%); /* Offset per centrare esattamente */
+    color: white; /* Colore del testo */
+    text-align: center; /* Centra il testo */
+    z-index: 1; /* Assicura che il testo sia sopra il video */
+    background-color: #0000007a;
+    height: 100%;
+    width: 100%;
+    padding-top: 35vh;
+  }
 }
 
 
@@ -1778,4 +1810,38 @@ h1 {
   border-radius: 15px;
   margin: 5px; /* Spazio tra le immagini */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.parallax {
+  background-image: url('pizforno.jpeg'); /* Sostituisci con il tuo URL */
+  height: 50vh; /* Altezza pari alla vista */
+  background-attachment: fixed; /* Attaccato allo sfondo */
+  background-position: center; /* Centra l'immagine */
+  background-repeat: no-repeat; /* Non ripetere l'immagine */
+  background-size: cover; /* Copri completamente */
+  position: relative; /* Necessario per il posizionamento dell'overlay */
+}
+
+.overlay {
+  position: absolute; /* Posiziona l'overlay all'interno del container */
+  top: 0; /* Inizia dalla parte superiore */
+  left: 0; /* Inizia dalla parte sinistra */
+  right: 0; /* Allarga fino a destra */
+  bottom: 0; /* Allarga fino in fondo */
+  background-color: rgba(12, 12, 12, 0.486); /* Sfondo semi-trasparente */
+  display: flex; /* Usa il flexbox per centrare il contenuto */
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine di sfondo */
+}
+
+.centered-text {
+  color: #d32f2f; /* Colore del testo */
+  font-size: 2rem; /* Dimensione del font */
+  margin: 0; /* Rimuovi margini */
+  text-align: center; /* Allinea il testo al centro */
+}
+
+.content {
+  padding: 20px; /* Aggiungi padding alla sezione di contenuto */
 }
