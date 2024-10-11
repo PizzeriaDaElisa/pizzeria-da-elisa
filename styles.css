@@ -214,7 +214,6 @@ nav a:hover::after {
     z-index: 1; /* Assicura che il testo sia sopra il video */
     padding: 20px; /* Padding per il testo */
     border-radius: 8px; /* Angoli arrotondati */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Transizione per movimento e opacità */
     opacity: 1; /* Inizialmente visibile */
 }
 
