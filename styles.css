@@ -11,13 +11,12 @@ header {
   background: #d32f2f;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
-  /* Rende l'header fisso */
+
   top: 0;
   left: 0;
   z-index: 1000;
   transition: height 0.3s ease-in-out;
   border-bottom: 2px solid white;
-  /* Transizione per altezza */
 }
 
 .header-container {
@@ -26,7 +25,7 @@ header {
   align-items: center;
   flex-direction: column;
   padding: 10px 20px;
-  /* Riduzione padding */
+
   transition: padding 0.3s ease-in-out;
 }
 
@@ -64,84 +63,56 @@ nav a:hover::after {
 .logo {
   padding-top: 10px;
   height: 80px;
-  /* Altezza originale del logo */
   transition: height 0.3s ease-in-out;
-  /* Transizione per ridimensionamento */
 }
 
 .header-scrolled .logo {
   height: 40px;
-  /* Altezza ridotta del logo quando si scorre */
 }
 
 .header-scrolled .header-container {
   padding: 5px 20px;
-  /* Riduce il padding */
 }
 
-/* Bottone del menu mobile */
 .menu-toggle {
   display: none;
-  /* Nasconde il bottone di toggle sui desktop */
   font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
   position: absolute;
   right: 20px;
-  /* Allinea a destra nell'header */
   top: 20px;
-  /* Posizionato in alto */
   z-index: 1500;
-  /* Sopra gli altri elementi */
 }
 
-/* Stile del menu a tendina per dispositivi mobili */
 #mobile-menu {
   display: none;
-  /* Inizialmente nascosto */
   flex-direction: column;
-  /* Posizionamento verticale */
   position: absolute;
   right: 0px;
   top: 60px;
-  /* Posizionamento sotto l'header */
   background: rgba(211, 47, 47, 0.95);
-  /* Sfondo semi-trasparente */
   padding: 10px 0;
-  /* Padding interno */
   z-index: 1400;
-  /* Sopra il contenuto ma sotto il bottone */
   width: 100%;
-  /* Occupa tutta la larghezza */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Leggera ombreggiatura */
 }
 
 #mobile-menu div {
   padding: 15px 20px;
-  /* Spaziatura intorno ai link */
   text-align: center;
-  /* Centra il testo nei div */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  /* Separazione tra i link */
 }
 
 #mobile-menu div:last-child {
   border-bottom: none;
-  /* Rimuove il bordo inferiore dall'ultimo elemento */
 }
 
 #mobile-menu a {
   color: #ffffff;
-  /* Colore del testo */
   font-weight: 700;
   text-decoration: none;
-  /* Nessuna decorazione sui link */
 }
-
-/* Modifica del layout per i dispositivi mobili */
-
-/* Layout per dispositivi ancora più piccoli */
 
 @media (max-width: 768px) {
   .hidecc {
@@ -152,103 +123,96 @@ nav a:hover::after {
 @media (max-width: 430px) {
   .header-container {
     flex-direction: row;
-    /* Mantiene la direzione dell'header */
+
     justify-content: space-between;
-    /* Spazia logo e bottone */
   }
 
   .logo {
     height: 50px;
-    /* Riduce l'altezza del logo */
   }
 
   .menu-toggle {
     right: 15px;
-    /* Piccolo aggiustamento di destra */
   }
 
   #mobile-menu {
     top: 60px;
-    /* Posizionamento sotto l'header */
+
     width: 100%;
-    /* Estende la larghezza del menu */
   }
 
   nav {
     display: none;
-    /* Nasconde il menu desktop */
   }
 
   .menu-toggle {
     display: block;
-    /* Mostra il bottone di toggle */
+
     font-size: 20px;
   }
 }
-/* Stile per il contenitore del carosello */
+
 .carousel {
-    position: relative; /* Posizione relativa per il contenitore */
-    width: 100%; /* Imposta la larghezza del carosello */
-    height: 100vh; /* Imposta un'altezza fissa per il carosello */
-    overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .video-bg {
-    position: absolute; /* Posizionamento assoluto del video */
-    top: 50%; /* Centrato verticalmente */
-    left: 50%; /* Centrato orizzontalmente */
-    width: 100%; /* Fai in modo che il video occupi tutta la larghezza */
-    height: 100%; /* Fai in modo che il video occupi tutta l'altezza */
-    object-fit: cover; /* Fai in modo che il video si adatti all'area senza distorsioni */
-    transform: translate(-50%, -50%); /* Centra esattamente il video */
-    z-index: 0; /* Assicura che il video sia sotto il testo */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .carousel-text {
-    position: absolute; /* Posizione assoluta per il testo */
-    top: 50%; /* Centrato verticalmente */
-    left: 50%; /* Centrato orizzontalmente */
-    color: white; /* Colore del testo */
-   transform: translate(-50%, -50%); /* Offset per centrare esattamente */
-    text-align: center; /* Centra il testo */
-    z-index: 1; /* Assicura che il testo sia sopra il video */
-    padding: 20px; /* Padding per il testo */
-    border-radius: 8px; /* Angoli arrotondati */
-    opacity: 1; /* Inizialmente visibile */
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .carousel-text h1 {
-    font-size: 2.5rem; /* Dimensione del titolo */
-    margin: 0; /* Rimuovi margine */
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 .content {
-    padding: 20px; /* Aggiungi padding alla sezione di contenuto */
+  padding: 20px;
 }
 
 @media (max-width: 430px) {
   .carousel {
-    position: relative; /* Posizione relativa per il contenitore */
-    width: 100%; /* Imposta la larghezza del carosello */
-    height: 70vh; /* Imposta un'altezza fissa per il carosello */
-    overflow: hidden; /* Nascondi eventuali contenuti in eccesso */
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
   }
 
   .carousel-text {
-    position: absolute; /* Posizione assoluta per il testo */
-    top: 30%; /* Centra verticalmente */
-    left: 50%; /* Centra orizzontalmente */
-    color: white; /* Colore del testo */
-    text-align: center; /* Centra il testo */
-    z-index: 1; /* Assicura che il testo sia sopra il video */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
     background-color: #0000007a;
     height: 100%;
     width: 100%;
-    padding-top: 30vh;
+    padding-top: 35vh;
   }
 }
-
-
 
 section {
   padding: 40px 20px;
@@ -265,93 +229,70 @@ h2 {
 
 #menu {
   text-align: center;
-  /* Centra il testo nella sezione */
   padding: 20px;
-  /* Padding per un po' di spazio */
   background-color: #f4f4f4;
-  /* Sfondo chiaro per la sezione */
   padding-bottom: 50px;
 }
 
 .menu-gallery {
   display: flex;
-  /* Utilizza flexbox per disporre gli elementi in fila */
   flex-wrap: wrap;
-  /* Permette di andare a capo se non c'è abbastanza spazio */
   justify-content: center;
-  /* Centra gli elementi */
   gap: 20px;
-  /* Spazio tra le pizze */
 }
 
 .menu-item {
   background-color: white;
-  /* Sfondo bianco per le pizze */
   border-radius: 8px;
-  /* Bordo arrotondato */
   box-shadow: 0 6px 12px #6d6d6d;
-  /* Ombra leggera */
   max-width: 220px;
-  /* Larghezza massima per ogni pizza */
   padding: 10px;
-  /* Padding interno */
   transition: transform 0.3s;
-  /* Transizione per l'effetto hover */
 }
 
 .menu-item:hover {
   transform: scale(1.05);
-  /* Leggero ingrandimento al passaggio del mouse */
 }
 
 .menu-item img {
   width: 200px;
   height: 200px;
-  img-fit:cover;
-  /* Larghezza dell'immagine al 100% del contenitore */
+  img-fit: cover;
+
   border-radius: 8px 8px 0 0;
-  /* Arrotonda solo la parte superiore dell'immagine */
 }
 
 .menu-item h3 {
   color: #d32f2f;
-  /* Colore rosso per il titolo della pizza */
   margin: 10px 0 5px;
-  /* Margini per il titolo */
 }
 
 .menu-item p {
   color: #333;
-  /* Colore scuro per la descrizione */
   text-justify: center;
 }
 
 .menu-item {
-  opacity: 0; /* Invisibile di default */
-  transform: translateX(-100px); /* Partenza da sinistra */
-  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
-  margin: 10px; /* Spaziatura tra gli elementi */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  margin: 10px;
 }
 
-/* Classe per l'entrata in vista */
 .menu-item.in-view {
-  opacity: 1; /* Diventa visibile */
-  transform: translateX(0); /* Si sposta nella posizione originale */
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* Classe per l'uscita dalla vista */
 .menu-item.out-of-view {
-  opacity: 0; /* Diventa invisibile */
-  transform: translateX(50px); /* Esce verso destra */
+  opacity: 0;
+  transform: translateX(50px);
 }
 
 footer {
   background-color: #d32f2f;
-  /* Rosso */
   color: white;
-  /* Testo bianco */
   padding: 20px 0;
-  /* Altezza aumentata */
   text-align: center;
   width: 100%;
   height: auto;
@@ -360,99 +301,52 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  /* Distribuisce lo spazio tra gli elementi */
   align-items: center;
   max-width: 1200px;
-  /* Larghezza massima del footer */
   margin: 0 auto;
-  /* Centra il footer */
   padding: 0 20px;
-  /* Margine laterale */
 }
 
-/* Media query per schermi più piccoli */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    /* Disposizione in colonna per i dispositivi mobili */
     align-items: center;
-    /* Centra gli elementi */
   }
 
   .footer-content p {
     margin: 10px 0;
-    /* Aggiunge margine verticale tra i paragrafi */
   }
 }
 
-/* Media query per schermi più larghi */
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
-    /* Disposizione in riga per schermi più larghi */
-    /* Distribuisce lo spazio tra gli elementi */
   }
 
   .footer-content p {
     margin: 0px 0px;
-    /* Margine orizzontale per i paragrafi */
   }
 }
 
 .social-icons {
   display: flex;
   gap: 15px;
-  /* Spazio tra le icone */
 }
 
 .social-icon {
   display: inline-block;
-  /* Consente di impostare dimensioni */
   width: 60px;
-  /* Larghezza fissa per le icone */
   height: 60px;
-  /* Altezza fissa per le icone */
   border-radius: 50%;
   display: flex;
-  /* Flexbox per centrare l'icona */
   justify-content: center;
-  /* Centra orizzontalmente */
   align-items: center;
-  /* Centra verticalmente */
   transition: transform 0.3s, background-color 0.3s;
-  /* Effetto di transizione */
   color: black;
 }
 
 .social-icon:hover {
   transform: scale(1.1);
-  /* Effetto di ingrandimento al passaggio del mouse */
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contact-form button {
-  padding: 10px;
-  background-color: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #ad2020;
 }
 
 @media (max-width: 768px) {
@@ -470,122 +364,85 @@ footer {
   }
 }
 
-/* Aggiungi questo codice per le nuove sezioni */
-
 #about-contact {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* Allineamento degli elementi all'inizio */
   margin: 20px auto;
   max-width: 1200px;
-  /* Dimensione massima per il contenitore */
 }
 
 .about-section {
   flex: 1;
-  /* Permette alla sezione "Chi Siamo" di occupare spazio */
   padding-right: 20px;
-  /* Spazio a destra per distanziare il form */
 }
 
 .container {
   display: flex;
-  /* Flexbox per allineare i div */
   align-items: flex-start;
-  /* Allinea verticalmente i div */
   justify-content: space-around;
-  /* Spazio tra i div */
   padding: 20px;
-  /* Padding per la pagina */
 }
 
 .contact {
   background: #ffffff;
-  /* Sfondo con gradient */
   border-radius: 15px;
-  /* Angoli arrotondati */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  /* Ombra per un effetto di profondità */
   padding: 30px;
-  /* Spaziatura interna */
   width: 400px;
-  /* Larghezza fissa */
   transition: transform 0.3s;
-  /* Transizione per l'animazione */
   margin-right: 30px;
 }
 
 .contact:hover {
   transform: translateY(-5px);
-  /* Effetto di sollevamento al passaggio del mouse */
 }
 
 .contact h2 {
   color: #d32f2f;
-  /* Colore del titolo */
   font-size: 28px;
-  /* Dimensione del font */
   margin-bottom: 20px;
-  /* Margine sotto il titolo */
   text-align: center;
-  /* Allineamento del testo al centro */
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  /* Disposizione verticale degli elementi */
+  gap: 10px;
 }
 
 .contact-form input,
 .contact-form textarea {
   border: none;
-  /* Nessun bordo */
   border-bottom: 2px solid #ccc;
-  /* Solo la linea sotto */
   padding: 12px 0;
-  /* Spaziatura verticale */
   margin-bottom: 15px;
-  /* Spaziatura sotto gli input */
   font-size: 16px;
-  /* Dimensione del font */
   transition: border-color 0.3s;
-  /* Transizione per il colore del bordo */
+  border-radius: 4px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-bottom-color: #d32f2f;
-  /* Colore della linea sotto quando è attivo */
   outline: none;
-  /* Rimuove l'outline predefinito */
 }
 
 .contact-form button {
   background-color: #d32f2f;
-  /* Colore di sfondo del pulsante */
   color: white;
-  /* Colore del testo del pulsante */
   border: none;
-  /* Nessun bordo */
   border-radius: 8px;
-  /* Angoli arrotondati */
   padding: 12px;
-  /* Spaziatura interna */
   cursor: pointer;
-  /* Cambia il cursore al passaggio del mouse */
   font-size: 16px;
-  /* Dimensione del font */
   transition: background-color 0.3s, transform 0.2s;
-  /* Transizioni per il pulsante */
+  padding: 10px;
 }
 
 .contact-form button:hover {
   background-color: #a91f2d;
-  /* Colore più scuro al passaggio del mouse */
   transform: translateY(-2px);
-  /* Effetto di sollevamento al passaggio del mouse */
 }
 
 @media (max-width: 768px) {
@@ -634,105 +491,58 @@ footer {
   }
 }
 
-@media (max-width: 320px) {
-  .extra-content {
-    align-self: left;
-    flex-direction: column;
-    margin: 10px 10px;
-    max-height: fit-content;
-    width: 280px;
-    margin-left: 5px;
-  }
-
-  .btnrec {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: none;
-
-    margin-left: -20px;
-  }
-}
-
-@media (max-width: 375px) {
-  .extra-content {
-    align-self: left;
-    flex-direction: column;
-    margin: 10px 10px;
-    max-height: fit-content;
-    width: 335px !important;
-    margin-left: 5px;
-  }
-
-  .btnrec {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: none;
-
-    margin-left: -20px;
-  }
-}
-
-@media (max-width: 430px) {
-  .extra-content {
-    align-self: left;
-    flex-direction: column;
-    margin: 10px 10px;
-    max-height: fit-content;
-    width: 380px;
-    margin-left: 5px;
-  }
-
-  .btnrec {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: none;
-
-    margin-left: -20px;
-  }
-}
-
 @media (max-width: 768px) {
   .contact {
     padding: 20px;
-    /* Padding interno per il contatto su mobile */
     width: 95%;
-    /* Assicura che il modulo si adatti allo schermo */
   }
 
   .contact-form {
     width: 95%;
-    /* Assicura che il modulo si adatti allo schermo */
   }
 }
 
 .contact-form textarea {
   resize: vertical;
-  /* Permette solo il ridimensionamento verticale */
   max-width: 100%;
-  /* Mantiene la larghezza massima al 100% del contenitore */
   min-height: 100px;
-  /* Imposta un'altezza minima per il campo del messaggio */
   box-sizing: border-box;
-  /* Include il padding e il bordo nella larghezza totale */
 }
 
-@media (max-width: 768px) {
-  .extra-content {
-    align-self: left;
-    flex-direction: column;
-    margin: 10px 10px;
-    max-height: fit-content;
-    width: 450px;
-    margin-left: 5px;
-  }
+.extra-content {
+  width: 100%;
+  background-color: #f4f4f4;
+  margin-top: 53px;
+  justify-content: center;
+  height: auto;
+  max-height: 525px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
 
-  .btnrec {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: none;
+.extra-content h1 {
+  color: #d32f2f;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin-bottom: 50px;
+}
 
-    margin-left: -20px;
-  }
+.extra-content h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: var(--border-width, 0%);
+  height: 2px;
+  background-color: black;
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
 }
 
 @media (max-width: 320px) {
@@ -767,7 +577,6 @@ footer {
     background-color: #ffffff;
     border: none;
     box-shadow: none;
-
     margin-left: -20px;
   }
 }
@@ -780,148 +589,99 @@ footer {
     max-height: fit-content;
     width: 410px;
     margin-left: 5px;
+    flex-direction: column;
+    max-width: 100%;
+    width: 700px;
+    margin-left: 5px;
+    max-height: fit-content;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 150px;
   }
-
 
   .btnrec {
     background-color: #ffffff;
     border: none;
     box-shadow: none;
-
     margin-left: -20px;
   }
 }
 
 .menu-button {
   text-align: center;
-  /* Centra il pulsante */
   margin-top: 40px;
-  /* Spazio sopra il pulsante per distaccarlo dalla galleria */
 }
 
 .buttonmenu {
   background-color: #ffffff;
-  /* Colore rosso intenso */
   color: #d32f2f;
-  /* Testo bianco */
   padding: 15px 35px;
-  /* Padding interno più ampio */
   border: none;
-  /* Nessun bordo */
   border-radius: 25px;
-  /* Bordo arrotondato */
   text-decoration: none;
-  /* Nessuna sottolineatura */
   font-size: 20px;
-  /* Dimensione del font più grande */
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  /* Transizioni per il background e l'ombra */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  /* Cambia il cursore quando passa sopra */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  /* Ombra per dare profondità */
   border: #c9302c 2px solid;
 }
 
 .buttonmenu:hover {
   background-color: #d32f2f;
-  /* Colore rosso scuro al passaggio del mouse */
   transform: scale(1.1) translateY(-3px);
-  /* Ingrandisce il pulsante e lo sposta verso l'alto */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  /* Ombra più intensa al passaggio del mouse */
   color: white;
 }
 
 .buttonmenu:active {
   transform: scale(0.95);
-  /* Effetto di compressione quando il pulsante viene cliccato */
 }
 
-/* Stile per la sezione Home */
-/* Stile per la sezione Home */
 .home-section {
   background-color: #f4f4f4;
-
   color: #333;
-
   padding: 30px 0;
   max-width: 100%;
-  /* Larghezza massima per mantenere il testo leggibile */
   margin: 100px 0;
-  /* Centra la sezione con margine superiore */
   box-shadow: none;
+  box-sizing: border-box;
 }
 
-/* Stile per il titolo */
 .home-section h2 {
   font-size: 2.8rem;
-  /* Dimensione del font per il titolo */
   font-weight: 700;
-  /* Grassetto */
   margin-bottom: 25px;
-  /* Spaziatura inferiore */
   color: #d32f2f;
-  /* Rosso del brand */
   text-align: center;
   width: 100%;
 }
 
-/* Stile per il paragrafo */
 .home-section li {
   font-size: 1.2rem;
-  /* Dimensione del testo */
   line-height: 1.6;
-  /* Altezza della riga per una migliore leggibilità */
-
   padding: 20px 0px;
-  /* Bordi arrotondati */
   text-align: center;
-  
-}
-/* Aggiunta di effetti su hover */
-.home-section:hover {
-  transform: translateY(-5px);
-  /* Effetto sollevamento */
-  transition: transform 0.3s ease-in-out;
-}
-
-.home-section {
-  width: 100%;
-  /* Occupazione del 50% della larghezza */
-  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-in-out;
 }
 
 @keyframes slideInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px); /* Parte da sinistra */
+    transform: translateX(-100px);
   }
+
   100% {
     opacity: 1;
-    transform: translateX(0); /* Arriva nella posizione originale */
+    transform: translateX(0);
   }
 }
 
-/* Stile di base per il paragrafo nascosto prima dell'animazione */
-.home-section li {
-  opacity: 0; /* Inizia invisibile */
-  transform: translateX(-100px); /* Fuori dallo schermo a sinistra */
-  transition: all 0.5s ease-in-out; /* Aggiunge un effetto di transizione */
-}
-
-/* Quando l'animazione è attivata */
 .home-section li.visible {
   animation: slideInLeft 0.6s ease forwards;
   opacity: 1;
-  transform: translateX(0); /* Posizione finale */
-}
-
-.immagineprincipale {
-  width: 300px;
-  height: fit-content;
-  float: right;
+  transform: translateX(0);
 }
 
 @media (max-width: 768px) {
@@ -939,50 +699,47 @@ footer {
   }
 }
 
-.pizza-svg12, .description-container12 {
-  opacity: 0; /* Invisibile di default */
-  transform: translateY(50px); /* Partenza dal basso */
-  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
+.pizza-svg12,
+.description-container12 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Entrata in vista */
 .pizza-svg12.in-view,
 .description-container12.in-view {
-  opacity: 1; /* Diventa visibile */
-  transform: translateY(0); /* Si sposta nella posizione originale */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Uscita verso il basso */
 .pizza-svg12.out-of-view,
 .description-container12.out-of-view {
-  opacity: 0; /* Diventa invisibile */
-  transform: translateY(50px); /* Torna verso il basso */
+  opacity: 0;
+  transform: translateY(50px);
 }
 
-
-.pizza-svg, .description-container {
-  opacity: 0; /* Invisibile di default */
-  transform: translateY(50px); /* Partenza dal basso */
-  transition: transform 0.6s ease, opacity 0.6s ease; /* Transizione fluida */
+.pizza-svg,
+.description-container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Entrata in vista */
 .pizza-svg.in-view,
 .description-container.in-view {
-  opacity: 1; /* Diventa visibile */
-  transform: translateY(0); /* Si sposta nella posizione originale */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Uscita verso il basso */
 .pizza-svg.out-of-view,
 .description-container.out-of-view {
-  opacity: 0; /* Diventa invisibile */
-  transform: translateY(50px); /* Torna verso il basso */
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .btnrec {
   background-color: #f8f9fa;
-  /* Colore di sfondo per separarlo */
+
   border-right: 2px solid #ddd;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -1008,7 +765,6 @@ footer {
     max-height: fit-content;
   }
 
-
   .btnrec {
     border: none;
     margin-left: -20px;
@@ -1016,247 +772,136 @@ footer {
   }
 }
 
-/* Singola recensione */
 .review {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
 
-/* Stile delle stelline */
 .stars {
   color: #f39c12;
-  /* Colore dorato per le stelline */
   font-size: 1.2em;
 }
 
-/* Stile del testo */
 .review p {
   margin: 5px 0;
 }
 
-/* Titolo della sezione recensioni */
 .fixed-reviews h2 {
   font-weight: 700;
   text-align: center;
 }
 
-/* Stile del contenitore principale */
 .carosellochallenge-container {
   display: flex;
-  /* Utilizza flexbox per il layout */
   flex-direction: column;
-  /* Colonna per posizionare il carosello sopra il testo */
   align-items: center;
-  /* Centra gli elementi */
   width: 100%;
-  /* Larghezza massima del contenitore */
-  /* Margine verticale */
   padding: 30px;
-  /* Padding per il contenitore */
-  /* Ombra leggera per profondità */
   border-radius: 8px;
-  /* Angoli arrotondati */
   background-color: #ffffff;
-  /* Sfondo bianco */
 }
 
-/* Stile del  */
 .carosellochallenge {
   position: relative;
-  /* Posizione relativa per i controlli */
   width: 55%;
-  /* Larghezza fissa per il carosello */
   margin-bottom: 20px;
-  /* Spazio tra carosello e testo */
   border: 1px solid #ddd;
-  /* Bordo leggero per il carosello */
   border-radius: 8px;
-  /* Angoli arrotondati */
   overflow: hidden;
-  /* Nasconde le immagini in eccesso */
 }
 
-/* Contenuto del carosello */
 .carousel-content {
   height: 400px;
-  /* Altezza fissa per le immagini */
 }
 
-/* Stile delle immagini */
 .carousel-image {
   width: 100%;
-  /* Immagini occupano tutta la larghezza */
   height: 100%;
-  /* Mantiene le proporzioni */
   display: block;
 }
 
-/* Stile dei controlli */
-button.prev,
-button.next {
-  background-color: rgba(255, 255, 255, 0.8);
-  /* Sfondo traslucido */
-  border: none;
-  /* Nessun bordo */
-  cursor: pointer;
-  /* Cursore a mano */
-  padding: 10px;
-  /* Padding */
-  position: absolute;
-  /* Posizione assoluta */
-  top: 50%;
-  /* Centra verticalmente */
-  transform: translateY(-50%);
-  /* Sposta per centrare */
-  z-index: 10;
-  /* Assicurati che siano sopra le immagini */
-  border-radius: 4px;
-  /* Angoli arrotondati per i pulsanti */
-  transition: background-color 0.3s;
-  /* Transizione sul background */
-}
-
-/* Pulsante "Precedente" */
-button.prev {
-  left: 10px;
-  /* Posizione a sinistra */
-}
-
-/* Pulsante "Successivo" */
-button.next {
-  right: 10px;
-  /* Posizione a destra */
-}
-
-/* Stile del testo accanto al carosello */
 .carosellochallenge-text {
   max-width: 850px;
-  /* Larghezza massima per il testo */
   padding: 10px;
-  /* Padding per il testo */
 }
 
 .carosellochallenge-text h2 {
   color: #d32f2f;
-  /* Colore del titolo */
   font-family: "Arial", sans-serif;
-  /* Font moderno */
   font-size: 1.8em;
-  /* Dimensione del titolo */
   margin-bottom: 10px;
-  /* Margine inferiore */
   text-align: center;
 }
 
 .carosellochallenge-text p {
   color: #333;
-  /* Colore del testo */
   font-family: "Arial", sans-serif;
-  /* Font moderno */
   font-size: 1em;
-  /* Dimensione del testo */
   line-height: 1.6;
-  /* Altezza della linea per una migliore leggibilità */
 }
 
-/* Effetto hover sui pulsanti */
-button.prev:hover,
-button.next:hover {
-  background-color: rgba(255, 255, 255, 1);
-  /* Colore di sfondo al passaggio del mouse */
-}
-
-
-
-/* Media query per dispositivi mobili */
 @media (max-width: 768px) {
   .carosellochallenge-container {
     align-items: center;
-    /* Centra gli elementi */
     width: 100%;
     margin-left: 5px;
   }
 
   .carosellochallenge {
     width: 100%;
-    /* Larghezza completa su schermi piccoli */
   }
 
   .carousel-content {
     height: auto;
-    /* Altezza automatica per immagini su dispositivi mobili */
   }
 }
 
 @media (max-width: 320px) {
-
   .carosellochallenge {
-    width: 100%; /* Larghezza completa su schermi piccoli */
-    height: 190px; /* Altezza fissa per uniformare il carosello */
+    width: 100%;
+    height: 190px;
   }
 
   .carousel-content {
-    width: 100%; /* Adatta la larghezza del contenitore */
-    height: 100%; /* Altezza al 100% del carosello */
+    width: 100%;
+    height: 100%;
   }
 
   .carousel-content img {
-    width: 100%; /* Mantiene la larghezza piena */
-    height: 190px; /* Altezza fissa per tutte le immagini */
-    object-fit: cover; /* Taglia l'immagine se necessario mantenendo il rapporto */
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
   }
 }
 
-/* Stile per il pulsante Torna Su */
-
 .back-to-top {
   position: fixed;
-  /* Fissa il pulsante nella posizione */
   bottom: 10px;
-  /* Distanza dal fondo */
   right: 10px;
-  /* Distanza da destra */
   width: 80px;
-  /* Larghezza del pulsante */
   height: 80px;
-  /* Altezza del pulsante */
   background-color: #d32f2f;
-  /* Colore di sfondo */
   color: white;
-  /* Colore del testo */
   border-radius: 50%;
-  /* Rende il pulsante rotondo */
   display: flex;
-  /* Utilizza Flexbox */
   flex-direction: column;
-  /* Disposizione in colonna */
   justify-content: center;
-  /* Centra verticalmente */
   align-items: center;
-  /* Centra orizzontalmente */
   text-align: center;
-  /* Centra il testo */
   cursor: pointer;
-  /* Mostra il cursore a mano */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Ombra del pulsante */
   z-index: 1000;
-  /* Assicura che il pulsante sia sopra altri elementi */
 }
 
 .pizza-icon {
   width: 30px;
-  /* Larghezza dell'icona della pizza */
   height: 30px;
-  /* Altezza dell'icona della pizza */
   padding-top: 10px;
 }
 
-/* Hover effect */
 .back-to-top:hover {
   background-color: #d32f2f;
-  /* Colore di sfondo quando passa sopra */
 }
 
 @media (max-width: 768px) {
@@ -1278,10 +923,8 @@ h1 {
 .impasti-grid {
   display: grid;
   grid-template-columns: 150px 1fr;
-  /* Layout predefinito: icona a sinistra e testo a destra */
   gap: 20px;
   align-items: center;
-  /* Allinea verticalmente le icone e i testi */
 }
 
 .pizza-svg {
@@ -1292,46 +935,34 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: start;
-  /* Allinea il testo all'inizio della cella */
 }
 
 .description-container p {
   margin: 0;
-  /* Rimuovi margini extra */
   text-align: left;
-  /* Allinea il testo a sinistra */
   line-height: 1.6;
 }
 
-/* Media Query per layout mobile */
 @media (max-width: 768px) {
   .impasti-grid {
     grid-template-columns: 1fr;
-    /* Disposizione verticale per mobile */
     grid-template-rows: auto;
-    /* Le icone e i testi saranno disposti uno sopra l'altro */
     gap: 30px;
-    /* Spazio aggiuntivo tra le sezioni */
   }
 
   .pizza-svg,
   .description-container {
     display: block;
-    /* Disposizione verticale */
     text-align: center;
-    /* Centra gli elementi */
     margin: 0 auto;
-    /* Centra l'intera colonna */
   }
 
   .pizza-svg img {
     margin-bottom: 10px;
-    /* Spaziatura tra l'icona e il testo */
   }
 
   .description-container p {
     text-align: center;
-    /* Centra il testo per il layout verticale */
   }
 }
 
@@ -1343,26 +974,16 @@ h1 {
 
 .background-image {
   position: relative;
-  /* Fissa l'immagine in posizione */
   top: 0;
-  /* Inizio della pagina */
   left: 0;
-  /* Inizio della pagina */
   width: 100%;
-  /* Larghezza al 100% */
   height: 300px;
-  /* Altezza dello schermo */
   background-image: url("pizforno.jpeg");
-  /* URL dell'immagine */
   background-repeat: none;
   background-size: cover;
-  /* Copre l'intera area */
   background-position: center top;
-  /* Posizione iniziale dell'immagine */
   z-index: -1;
-  /* Invia l'immagine dietro il testo */
   transition: background-position 0.5s ease;
-  /* Transizione per la posizione */
 }
 
 .overlay {
@@ -1372,61 +993,45 @@ h1 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  /* Overlay nero con trasparenza */
   display: flex;
   align-items: center;
-  /* Centra verticalmente il testo */
   justify-content: center;
-  /* Centra orizzontalmente il testo */
 }
 
 .centered-text {
   color: white;
-  /* Colore del testo */
   font-size: 3rem;
-  /* Dimensione del font */
   text-align: center;
-  /* Allinea il testo al centro */
 }
 
 @media (max-width: 768px) {
   .background-image {
     height: 200px;
-    /* Altezza ridotta per schermi più piccoli */
   }
 
   .centered-text {
     font-size: 2rem;
-    /* Dimensione del font ridotta per schermi più piccoli */
     padding: 0 10px;
   }
 }
 
-@media (max-width:430px) {
+@media (max-width: 430px) {
   .background-image {
     height: 150px;
-    /* Ulteriore riduzione dell'altezza per smartphone */
   }
 
   .centered-text {
     font-size: 1.5rem;
-    /* Dimensione del font ulteriormente ridotta */
   }
 }
 
 .sectioninformation {
   display: flex;
-  /* Flexbox per allineare gli elementi in fila */
   justify-content: space-between;
-  /* Spazio tra i contenuti */
   align-items: center;
-  /* Centra verticalmente gli elementi */
   padding: 20px;
-  /* Spaziatura interna */
   background-color: #333;
-  /* Colore di sfondo della sezione */
   color: white;
-  /* Colore del testo */
   padding-left: 80px;
   height: 300px;
 }
@@ -1435,68 +1040,53 @@ h1 {
 .sectioninformation-opening-hours,
 .sectioninformation-social-icons {
   flex: 1;
-  /* Ogni sezione occupa uno spazio uguale */
   margin: 0 0px;
-  /* Margine orizzontale */
 }
 
 .sectioninformation-links h3,
 .sectioninformation-opening-hours h3,
 .sectioninformation-social-icons h3 {
   margin-bottom: 10px;
-  /* Spaziatura sotto il titolo */
 }
 
 .sectioninformation-links ul {
   list-style: none;
-  /* Rimuove i puntini dalla lista */
 }
 
 .sectioninformation-links ul li {
   margin: 5px 0;
-  /* Spaziatura tra gli elementi della lista */
 }
 
 .sectioninformation-links a,
 .sectioninformation-social-icons a {
   color: white;
-  /* Colore dei link */
   text-decoration: none;
-  /* Rimuove la sottolineatura */
   transition: color 0.3s;
-  /* Transizione del colore al passaggio del mouse */
 }
 
 .sectioninformation-links a:hover,
 .sectioninformation-social-icons a:hover {
   color: #d32f2f;
-  /* Colore al passaggio del mouse */
 }
 
 .sectioninformation-social-icons {
   display: flex;
-  /* Flexbox per allineare le icone social in fila */
 }
 
 .social-icon {
   width: 30px;
-  /* Larghezza delle icone */
   height: auto;
-  /* Mantiene le proporzioni delle icone */
   margin: 0 10px;
-  /* Spaziatura orizzontale tra le icone */
 }
+
 .sectioninformation-logo {
   display: block;
 }
 
-/* Media query per dispositivi mobili */
 @media (max-width: 430px) {
   .sectioninformation {
     flex-direction: column;
-    /* Dispone gli elementi uno sotto l'altro */
     align-items: flex-start;
-    /* Allinea gli elementi a sinistra */
     margin-left: -30px;
   }
 
@@ -1507,15 +1097,12 @@ h1 {
   .sectioninformation-links,
   .sectioninformation-opening-hours,
   .sectioninformation-social-icons {
-    /* Spaziatura verticale */
     width: 100%;
-    /* Larghezza al 100% */
     margin-bottom: 5px;
   }
 
   .sectioninformation-social-icons {
     justify-content: flex-start;
-    /* Allinea le icone a sinistra */
   }
 }
 
@@ -1578,21 +1165,20 @@ h1 {
 }
 
 .open-modal-button:hover {
-  background-color: #b71c1c; /* Colore più scuro al passaggio del mouse */
+  background-color: #b71c1c;
 }
 
-/* Stili per la finestra modale */
 .caromenu {
-  display: none; /* Nascondi di default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Sfondo nero trasparente */
+  background-color: rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
-  z-index: 1001; /* Assicurati che sia sopra altri elementi */
+  z-index: 1001;
 }
 
 .caromenu img {
@@ -1613,7 +1199,7 @@ h1 {
   cursor: pointer;
   border-radius: 30%;
   padding: 5px;
-  z-index: 1002; /* Assicurati che sia sopra le immagini */
+  z-index: 1002;
 }
 
 .right-arrow3 {
@@ -1628,44 +1214,7 @@ h1 {
   cursor: pointer;
   border-radius: 30%;
   padding: 5px;
-  z-index: 1002; /* Assicurati che sia sopra le immagini */
-}
-
-
-.extra-content {
-  width: 100%;
-  background-color: #f4f4f4;
-  margin-top: 53px;
-  justify-content: center;
-  height: auto; /* Rimuove l'altezza fissa per una maggiore flessibilità */
-  max-height: 525px;
-  display: flex; /* Allinea gli elementi in una riga per schermi grandi */
-  flex-direction: row; /* Direzione degli elementi da sinistra a destra */
-  align-items: center; /* Allinea verticalmente */
-  gap: 15px; /* Spaziatura tra gli elementi */
-  margin-bottom: 150px;
-  margin-top:150px;
-}
-
-.extra-content h1 {
-  color: #d32f2f;
-  padding-bottom: 30px;
-  position: relative;
-  overflow: hidden;
-  width: 80%;
-  margin-bottom: 50px;
-}
-
-.extra-content h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: var(--border-width, 0%); /* Utilizza la variabile CSS per la larghezza */
-  height: 2px;
-  background-color: black;
-  transform: translateX(-50%); /* Centrato */
-  transition: width 0.5s ease; /* Transizione fluida per la larghezza */
+  z-index: 1002;
 }
 
 .main-content {
@@ -1675,11 +1224,11 @@ h1 {
 }
 
 .impasti-grid {
-  display: flex; /* Disposizione degli elementi interni in riga */
-  flex-direction: row; /* Direzione orizzontale */
-  align-items: center; /* Allineamento verticale */
-  gap: 60px; /* Spaziatura tra le icone e le descrizioni */
-  white-space: nowrap; /* Evita l'andare a capo */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  white-space: nowrap;
 }
 
 .pizza-svg {
@@ -1693,28 +1242,28 @@ h1 {
   justify-content: center;
 }
 
-/* Media Query per dispositivi mobili */
 @media (max-width: 768px) {
   .extra-content {
-    flex-direction: column; /* Cambia la direzione a colonna per schermi piccoli */
-    align-items: center; /* Allinea tutti gli elementi al centro */
-    padding: 20px; /* Aggiungi padding per spaziatura su mobile */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
     padding-bottom: 150px;
   }
 
   .extra-content h1 {
-    width: 100%; /* Rende il titolo a larghezza piena su mobile */
-    margin-bottom: 30px; /* Spaziatura inferiore per separazione */
+    width: 100%;
+    margin-bottom: 30px;
   }
 
   .impasti-grid {
-    flex-direction: column; /* Dispone le icone e le descrizioni in colonna */
-    gap: 30px; /* Spaziatura ridotta tra le sezioni */
+    flex-direction: column;
+    gap: 30px;
   }
 
-  .pizza-svg, .description-container {
-    flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
-    justify-content: center; /* Centrare su mobile */
+  .pizza-svg,
+  .description-container {
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -1723,15 +1272,15 @@ h1 {
   background-color: #f4f4f4;
   margin-top: 53px;
   justify-content: center;
-  height: auto; /* Rimuove l'altezza fissa per una maggiore flessibilità */
+  height: auto;
   max-height: 525px;
-  display: flex; /* Allinea gli elementi in una riga per schermi grandi */
-  flex-direction: row; /* Direzione degli elementi da sinistra a destra */
-  align-items: center; /* Allinea verticalmente */
-  gap: 15px; /* Spaziatura tra gli elementi */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 150px;
   margin-top: 100px;
-  padding-top:  10px;
+  padding-top: 10px;
 }
 
 .main-content12 {
@@ -1741,11 +1290,11 @@ h1 {
 }
 
 .impasti-grid12 {
-  display: flex; /* Disposizione degli elementi interni in riga */
-  flex-direction: row; /* Direzione orizzontale */
-  align-items: center; /* Allineamento verticale */
-  gap: 60px; /* Spaziatura tra le icone e le descrizioni */
-  white-space: nowrap; /* Evita l'andare a capo */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  white-space: nowrap;
 }
 
 .pizza-svg12 {
@@ -1759,27 +1308,27 @@ h1 {
   justify-content: center;
 }
 
-/* Media Query per dispositivi mobili */
 @media (max-width: 768px) {
   .extra-content12 {
-    flex-direction: column; /* Cambia la direzione a colonna per schermi piccoli */
-    align-items: center; /* Allinea tutti gli elementi al centro */
-    padding: 20px; /* Aggiungi padding per spaziatura su mobile */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
 
   .extra-content12 h1 {
-    width: 100%; /* Rende il titolo a larghezza piena su mobile */
-    margin-bottom: 30px; /* Spaziatura inferiore per separazione */
+    width: 100%;
+    margin-bottom: 30px;
   }
 
   .impasti-grid12 {
-    flex-direction: column; /* Dispone le icone e le descrizioni in colonna */
-    gap: 30px; /* Spaziatura ridotta tra le sezioni */
+    flex-direction: column;
+    gap: 30px;
   }
 
-  .pizza-svg12, .description-container12 {
-    flex-direction: column; /* Disporre l'icona e la descrizione uno sotto l'altro */
-    justify-content: center; /* Centrare su mobile */
+  .pizza-svg12,
+  .description-container12 {
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -1798,48 +1347,48 @@ h1 {
 
 .gallery-wrapper {
   display: flex;
-  will-change: transform; /* Ottimizzazione per prestazioni */
+  will-change: transform;
 }
 
 .gallery-image {
-  flex: 0 0 300px; /* Larghezza uniforme per tutte le immagini */
-  height: 200px; /* Altezza fissa per uniformare le immagini */
+  flex: 0 0 300px;
+  height: 200px;
   object-fit: cover;
   border-radius: 15px;
-  margin: 5px; /* Spazio tra le immagini */
+  margin: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .parallax {
-  background-image: url('pizforno.jpeg'); /* Sostituisci con il tuo URL */
-  height: 50vh; /* Altezza pari alla vista */
-  background-attachment: fixed; /* Attaccato allo sfondo */
-  background-position: center; /* Centra l'immagine */
-  background-repeat: no-repeat; /* Non ripetere l'immagine */
-  background-size: cover; /* Copri completamente */
-  position: relative; /* Necessario per il posizionamento dell'overlay */
+  background-image: url("pizforno.jpeg");
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .overlay {
-  position: absolute; /* Posiziona l'overlay all'interno del container */
-  top: 0; /* Inizia dalla parte superiore */
-  left: 0; /* Inizia dalla parte sinistra */
-  right: 0; /* Allarga fino a destra */
-  bottom: 0; /* Allarga fino in fondo */
-  background-color: rgba(12, 12, 12, 0.486); /* Sfondo semi-trasparente */
-  display: flex; /* Usa il flexbox per centrare il contenuto */
-  justify-content: center; /* Centra orizzontalmente */
-  align-items: center; /* Centra verticalmente */
-  z-index: 1; /* Assicurati che l'overlay sia sopra l'immagine di sfondo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(12, 12, 12, 0.486);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .centered-text {
-  color: #d32f2f; /* Colore del testo */
-  font-size: 2rem; /* Dimensione del font */
-  margin: 0; /* Rimuovi margini */
-  text-align: center; /* Allinea il testo al centro */
+  color: #d32f2f;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
 }
 
 .content {
-  padding: 20px; /* Aggiungi padding alla sezione di contenuto */
+  padding: 20px;
 }
