@@ -8,7 +8,7 @@ function sendEmail(event) {
   const subject = `Nuovo messaggio da ${name}`;
   const body = `Nome: ${name}\nEmail: ${email}\nMessaggio:\n${message}`;
 
-  const mailtoLink = `mailto:playerapex95@gmail.com?subject=${encodeURIComponent(
+  const mailtoLink = `mailto:elimoraschetti@gmail.com?subject=${encodeURIComponent(
     subject
   )}&body=${encodeURIComponent(body)}`;
 
