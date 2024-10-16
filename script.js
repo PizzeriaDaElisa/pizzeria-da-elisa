@@ -1,19 +1,29 @@
-function sendEmail(event) {
-  event.preventDefault(); 
+function sendWhatsApp(event) {
+  event.preventDefault(); // Impedisce il caricamento della pagina
 
+  // Recupera i dati dal modulo
   const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
+  const address = document.getElementById("address").value;
+  const number = document.getElementById("number").value;
+  const country = document.getElementById("country").value;
+  const phone = document.getElementById("phone").value;
+  const order = document.getElementById("order").value;
+  const time = document.getElementById("time").value; // Orario selezionato
   const message = document.getElementById("message").value;
 
-  const subject = `Nuovo messaggio da ${name}`;
-  const body = `Nome: ${name}\nEmail: ${email}\nMessaggio:\n${message}`;
+  // Crea il messaggio WhatsApp
+  const phoneNumber = "3279968390"; // Numero di telefono in formato internazionale (senza +)
+  const whatsappMessage = `Ciao, mi chiamo ${name}. Vivo in ${address} ${number}, ${country}. Il mio numero di telefono è ${phone}. Ho ordinato: ${order}. Vorrei che l'ordinazione fosse pronta per le ore: ${time}. ${message}`;
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-  const mailtoLink = `mailto:elimoraschetti@gmail.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
+  // Apri WhatsApp
+  window.open(whatsappLink, "_blank");
 
-  window.location.href = mailtoLink; 
+  // Resetta il modulo dopo l'invio
+  document.getElementById("contact-form").reset();
 }
+
 
 const carouselImages = document.querySelectorAll(".carousel-image");
 let currentIndex = 0;

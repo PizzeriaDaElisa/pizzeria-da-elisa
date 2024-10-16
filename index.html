@@ -50,7 +50,6 @@
 
   <div class="carousel">
     <img class="video-bg" src="pizza1.jpg.png" alt="foto"> 
-        Il tuo browser non supporta il tag video.
     <div class="carousel-text">
         <h1>Benvenuti nella nostra pizzeria</h1>
         <p>Scopri le nostre deliziose creazioni preparate con ingredienti freschi.</p>
@@ -236,7 +235,7 @@
 
   <section id="about-contact">
     <div class="about">
-      <h2>Ci trovi qui</h2>
+      <h2 align="center">Ci trovi qui</h2>
       <br />
       <iframe style="border-radius: 10px" class="map"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.3097947576775!2d10.34662668943164!3d46.0780074968206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4783b5c29cd942c1%3A0x2f79f6e318827838!2sPizzeria%20Elisa!5e0!3m2!1sit!2sit!4v1727700581768!5m2!1sit!2sit"
@@ -245,18 +244,27 @@
     </div>
     <div class="contact">
       <h2>Contatti</h2>
-      <form class="contact-form" id="contact-form" onsubmit="sendEmail(event)">
-        <input type="text" id="name" placeholder="Il tuo nome" required />
-        <input type="email" id="email" placeholder="La tua email" required />
-        <textarea id="message" rows="5" placeholder="Il tuo messaggio" required></textarea>
-        <button type="submit">Invia</button>
+      <form class="contact-form" id="contact-form" onsubmit="sendWhatsApp(event)">
+          <input type="text" id="name" placeholder="Il tuo nome" required />
+          <input type="text" id="address" placeholder="Indirizzo di casa" required />
+          <input type="text" id="number" placeholder="Numero Civico" required />
+          <input type="text" id="country" placeholder="Paese" required />
+          <input type="text" id="phone" placeholder="Il tuo numero di telefono" required />
+          <input type="text" id="order" placeholder="Prodotti da ordinare (es. Pizza, Bibita)" required />
+          
+          <label for="time">Orario (dalle 19:00 alle 22:00):</label>
+          <input type="time" id="time" name="time" min="19:00" max="22:00" required />
+  
+          <textarea id="message" rows="5" placeholder="Il tuo messaggio" required></textarea>
+          <button type="submit">Invia</button>
       </form>
       <br />
       <p>
-        Per prenotazioni e informazioni, contattaci al numero:
-        <strong>0364 088032</strong>
+          Per prenotazioni e informazioni, contattaci al numero:
+          <strong>0364 088032</strong>
       </p>
-    </div>
+  </div>
+  
   </section>
 
   <div class="sectioninformation">
@@ -297,6 +305,8 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 </body>
 
 </html>

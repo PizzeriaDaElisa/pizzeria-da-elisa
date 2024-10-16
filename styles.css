@@ -394,9 +394,6 @@ footer {
   margin-right: 30px;
 }
 
-.contact:hover {
-  transform: translateY(-5px);
-}
 
 .contact h2 {
   color: #d32f2f;

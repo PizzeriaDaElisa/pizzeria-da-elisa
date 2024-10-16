@@ -6,13 +6,11 @@
     <meta name="keywords" content="menu pizzeria da elisa cedegolo brescia, pizzerie in vallecamonica, pizzeria a cedegolo, Elisa Moraschetti, Pizza, sfida della pizza cedegolo, pizza cedegolo, Cedegolo, Cedegolo BS">
 
     <title>Pizzeria da elisa Menu</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
+
 .caromenu {
     display: none; /* Nasconde la finestra modale di default */
     position: fixed;
@@ -93,8 +91,7 @@
     </header>
 
     <div class="carousel">
-      <img src="pizza1.jpg.png" alt="Pizza 1" />
-      <div class="overlay-text"></div>
+        <img class="video-bg" src="pizza1.jpg.png" alt="foto"> 
   </div>
   
   <section>
@@ -466,11 +463,15 @@ const nextButton = document.getElementById("nextButton");
 const images = [
     "immagine_menu0.png",
     "immagine_menu1.png",
-    "immagine_menu2.png", // Aggiungi altre immagini se necessario
-    "immagine_menu3.png" // Aggiungi altre immagini se necessario
+    "immagine_menu2.png",
+    "immagine_menu3.png"
 ];
 
 let currentIndex = 0;
+
+// Variabili per il touch
+let startX = 0;
+let endX = 0;
 
 // Apri il carosello
 openModalButton.addEventListener("click", () => {
@@ -505,6 +506,34 @@ nextButton.addEventListener("click", (event) => {
     updateImage();
 });
 
+// Gestione del touch per lo swipe
+caroImage.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX; // Ottieni la posizione iniziale del touch
+});
+
+caroImage.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX; // Ottieni la posizione finale del touch
+});
+
+caroImage.addEventListener("touchend", () => {
+    const deltaX = startX - endX;
+    
+    if (Math.abs(deltaX) > 50) { // Verifica se il movimento è sufficiente per essere considerato uno swipe
+        if (deltaX > 0) {
+            // Swipe a sinistra (immagine successiva)
+            currentIndex = (currentIndex + 1) % images.length;
+        } else {
+            // Swipe a destra (immagine precedente)
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+        }
+        updateImage();
+    }
+
+    // Reset valori
+    startX = 0;
+    endX = 0;
+});
+
 // Zoom in e zoom out
 let isZoomedIn = false;
 
@@ -517,6 +546,7 @@ caroImage.addEventListener("click", () => {
         isZoomedIn = true;
     }
 });
+
 
     </script>
   </body>
