@@ -243,19 +243,19 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="contact">
-      <h2>Contatti</h2>
+      <h2>Ordina da qui oppure chiamaci</h2>
       <form class="contact-form" id="contact-form" onsubmit="sendWhatsApp(event)">
           <input type="text" id="name" placeholder="Il tuo nome" required />
-          <input type="text" id="address" placeholder="Indirizzo di casa" required />
+          <input type="text" id="address" placeholder="Indirizzo" required />
           <input type="text" id="number" placeholder="Numero Civico" required />
           <input type="text" id="country" placeholder="Paese" required />
           <input type="text" id="phone" placeholder="Il tuo numero di telefono" required />
           <input type="text" id="order" placeholder="Prodotti da ordinare (es. Pizza, Bibita)" required />
           
-          <label for="time">Orario (dalle 19:00 alle 22:00):</label>
+          <label for="time">Orario spedizione (dalle 19:00 alle 22:00):</label>
           <input type="time" id="time" name="time" min="19:00" max="22:00" required />
   
-          <textarea id="message" rows="5" placeholder="Il tuo messaggio" required></textarea>
+          <textarea id="message" rows="5" placeholder="Informazioni asporto (facoltativo)"></textarea>
           <button type="submit">Invia</button>
       </form>
       <br />

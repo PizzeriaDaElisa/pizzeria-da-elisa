@@ -12,12 +12,8 @@ function sendWhatsApp(event) {
   const message = document.getElementById("message").value;
 
   // Crea il messaggio WhatsApp
-  const phoneNumber = "3279968390"; // Numero di telefono in formato internazionale (senza +)
-  const whatsappMessage = `Ciao, sono ${name}.`
-   `Di: ${address} ${number}, ${country}. `
-  ` Il mio numero di telefono è ${phone}. `
-  ` Ho ordinato: ${order}. `
-   `Vorrei che l'ordinazione fosse pronta per le ore: ${time}. ${message}`;
+  const phoneNumber = "3755950956"; // Numero di telefono in formato internazionale (senza +)
+  const whatsappMessage = `Ciao, sono: ${name}. Di: ${address} ${number}, ${country}. Il mio numero di telefono è: ${phone}. Vorrei ordinare ${order}. per le: ${time}. ${message}`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
   const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
