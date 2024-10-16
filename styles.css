@@ -191,12 +191,13 @@ nav a:hover::after {
   padding: 20px;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 450px) {
   .carousel {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     overflow: hidden;
+    background-attachment:scroll;
   }
 
   .carousel-text {
@@ -1388,4 +1389,17 @@ h1 {
 
 .content {
   padding: 20px;
+}
+
+@media (max-width: 450px) {
+  .parallax {
+    background-attachment: scroll !important; /* Disattiva l'effetto parallax */
+    /* Puoi anche cambiare altre proprietà se necessario, ad esempio l'altezza dell'immagine o il posizionamento */
+  }
+  .centered-text {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+  }
 }
