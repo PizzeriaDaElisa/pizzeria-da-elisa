@@ -6,6 +6,35 @@ body {
   color: #333;
 }
 
+/* Preloader a schermo intero */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d32f2f; /* o qualsiasi colore */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Animazione di caricamento */
+.loader {
+  width: 50px;
+  height: 50px;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Effetto di rotazione */
+@keyframes spin {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+   100% { transform: translateY(0px); }
+}
+
+
 header {
   width: 100%;
   background: #d32f2f;
@@ -170,11 +199,6 @@ nav a:hover::after {
   z-index: 0;
 }
 
-@media (max-width: 450px) {
-  .carousel {
-    background-attachment:scroll !important;
-  }
-}
 .carousel-text {
   position: absolute;
   top: 60%;
@@ -190,19 +214,20 @@ nav a:hover::after {
 .carousel-text h1 {
   font-size: 2.5rem;
   margin: 0;
+  animation: ease-in 0.5s;
+  animation-delay: 0.2s;
 }
 
 .content {
   padding: 20px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 430px) {
   .carousel {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 70vh;
     overflow: hidden;
-    background-attachment:scroll !important;
   }
 
   .carousel-text {
@@ -400,6 +425,9 @@ footer {
   margin-right: 30px;
 }
 
+.contact:hover {
+  transform: translateY(-5px);
+}
 
 .contact h2 {
   color: #d32f2f;
@@ -827,10 +855,21 @@ footer {
 .carosellochallenge-text {
   max-width: 850px;
   padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: #333 1px solid;
+  border-radius: 8px;
+  background-color: #d32f2f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.carosellochallenge-text:hover {
+  font-size: 1.1em;
+  transition: font-size 0.3s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .carosellochallenge-text h2 {
-  color: #d32f2f;
+  color: white;
   font-family: "Arial", sans-serif;
   font-size: 1.8em;
   margin-bottom: 10px;
@@ -838,10 +877,11 @@ footer {
 }
 
 .carosellochallenge-text p {
-  color: #333;
+  color: white;
   font-family: "Arial", sans-serif;
   font-size: 1em;
   line-height: 1.6;
+  margin: 10px 10px;
 }
 
 @media (max-width: 768px) {
@@ -1396,15 +1436,3 @@ h1 {
   padding: 20px;
 }
 
-@media (max-width: 450px) {
-  .parallax {
-    background-attachment: scroll !important; /* Disattiva l'effetto parallax */
-    /* Puoi anche cambiare altre proprietà se necessario, ad esempio l'altezza dell'immagine o il posizionamento */
-  }
-  .centered-text {
-    color: #ffffff;
-    font-size: 2rem;
-    margin: 0;
-    text-align: center;
-  }
-}
