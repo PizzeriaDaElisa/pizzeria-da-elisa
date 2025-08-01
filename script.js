@@ -6,22 +6,6 @@
       content.style.display = "block";
     });
 
-function sendEmail(event) {
-  event.preventDefault(); 
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const subject = `Nuovo messaggio da ${name}`;
-  const body = `Nome: ${name}\nEmail: ${email}\nMessaggio:\n${message}`;
-
-  const mailtoLink = `mailto:elimoraschetti@gmail.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
-
-  window.location.href = mailtoLink; 
-}
 
 const carouselImages = document.querySelectorAll(".carousel-image");
 let currentIndex = 0;
@@ -217,7 +201,7 @@ const images = [
   'food1.jpg',
   'food2.jpg',
   'food3.jpg',
-  'food4ù.jpg',
+  'food4.jpg',
   'food5.jpg',
   'food6.jpg',
   'food7.jpg',
@@ -256,7 +240,7 @@ function addImages() {
 function startContinuousScroll() {
   function step() {
     
-    currentTranslate -= 0.3; 
+    currentTranslate -= 0.7; 
     galleryWrapper.style.transform = `translateX(${currentTranslate}px)`;
 
     
@@ -279,7 +263,6 @@ function startContinuousScroll() {
 
 
 addImages();
-addImages(); 
 
 
 startContinuousScroll();
