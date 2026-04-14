@@ -164,18 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
 const contenitore = document.getElementById("rullino-Sfida");
 
 const gallery = [
-  { src: "Images/Images1.jpeg", alt: "Primo piano" },
-  { src: "Images/Images2.jpeg", alt: "Spiaggia di giorno" },
-  { src: "Images/Images3.jpeg", alt: "Tramonto al mare" },
-  { src: "Images/Images4.jpg", alt: "Primo piano" },
-  { src: "Images/Images1.jpeg", alt: "Primo piano" },
-  { src: "Images/Images2.jpeg", alt: "Spiaggia di giorno" },
-  { src: "Images/Images3.jpeg", alt: "Tramonto al mare" },
-  { src: "Images/Images4.jpg", alt: "Primo piano" },
-  { src: "Images/Images1.jpeg", alt: "Primo piano" },
-  { src: "Images/Images2.jpeg", alt: "Spiaggia di giorno" },
-  { src: "Images/Images3.jpeg", alt: "Tramonto al mare" },
-  { src: "Images/Images4.jpg", alt: "Primo piano" }
+  { src: "Images/images1.jpeg", alt: "Primo piano" },
+  { src: "Images/images2.jpeg", alt: "Spiaggia di giorno" },
+  { src: "Images/images3.jpeg", alt: "Tramonto al mare" },
+  { src: "Images/images4.jpg", alt: "Primo piano" },
+  { src: "Images/images1.jpeg", alt: "Primo piano" },
+  { src: "Images/images2.jpeg", alt: "Spiaggia di giorno" },
+  { src: "Images/images3.jpeg", alt: "Tramonto al mare" },
+  { src: "Images/images4.jpg", alt: "Primo piano" },
+  { src: "Images/images1.jpeg", alt: "Primo piano" },
+  { src: "Images/images2.jpeg", alt: "Spiaggia di giorno" },
+  { src: "Images/images3.jpeg", alt: "Tramonto al mare" },
+  { src: "Images/images4.jpg", alt: "Primo piano" }
 ];
 
 gallery.forEach(foto => {
