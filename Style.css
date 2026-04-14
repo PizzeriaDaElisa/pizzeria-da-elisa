@@ -131,7 +131,7 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
     .preloader-logo {
-        width: 100px;
+        width: auto;
         height: 100px;
     }
     
@@ -259,6 +259,13 @@ header {
         0 0 82px var(--Link-color),
         0 0 92px var(--Link-color);
 }
+
+@media (max-width: 425px){
+    .header-img{
+        background-attachment:none;
+    }
+}
+
 
 /*---------------------------------------------------------------------------------------------------------------
 ------------------------------------------------STILE DELLE SEZIONI----------------------------------------------
