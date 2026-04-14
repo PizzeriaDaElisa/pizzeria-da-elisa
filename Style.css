@@ -263,11 +263,11 @@ header {
 @media (max-width: 425px) {
     .header-img {
         /* 'scroll' è il valore corretto per annullare il parallasse */
-        background-attachment: scroll;
+        background-attachment: scroll !important;
         
         /* Opzionale: assicura che l'immagine sia ben visibile su schermi piccoli */
-        background-position: center;
-        background-size: cover;
+        background-position: center !important;
+        background-size: cover !important;
     }
 }
 
