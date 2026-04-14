@@ -366,3 +366,53 @@ function animateCircle() {
 // Avvia l'animazione
 animateCircle();
 
+// ===================== PRELOADER =====================
+
+window.addEventListener('load', function() {
+    const preloader = document.querySelector('.preloader');
+    const preloaderBar = document.querySelector('.preloader-bar');
+    const preloaderText = document.querySelector('.preloader-text');
+    
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 15;
+        if (progress > 100) progress = 100;
+        
+        preloaderBar.style.width = progress + '%';
+        preloaderText.textContent = Math.floor(progress) + '%';
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                // Abilita lo scroll dopo il fade-out
+                setTimeout(() => {
+                    document.body.style.overflow = 'visible';
+                }, 600);
+            }, 300);
+        }
+    }, 80);
+});
+
+// Blocca lo scroll iniziale
+document.body.style.overflow = 'hidden';
+
+// ===================== OTTIMIZZAZIONI MOBILE =====================
+
+// Rileva se è mobile
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (isMobile) {
+    // Disabilita parallax su mobile
+    const headerImg = document.querySelector('.header-img');
+    if (headerImg) {
+        headerImg.style.backgroundAttachment = 'scroll';
+    }
+    
+    // Ottimizza animazioni
+    document.querySelectorAll('.reveal, .Card-Ingredienti, .column-card').forEach(el => {
+        el.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+    });
+}
+
+// Resto del tuo codice JavaScript...

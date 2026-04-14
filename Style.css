@@ -35,6 +35,117 @@ body {
 
 
 /*---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------INIZIO PRELOADER STYLE-------------------------------------------
+----------------------------------------------------------------------------------------------------------------*/
+
+/* ===================== PRELOADER ===================== */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Logo animato */
+.preloader-logo {
+    width: auto;
+    height: 120px;
+    margin-bottom: 40px;
+    animation: logoFloat 2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(76, 175, 80, 0.4));
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Contenitore barra di caricamento */
+.preloader-bar-container {
+    width: 300px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Barra di progresso */
+.preloader-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, 
+        var(--Secondary-color) 0%, 
+        #66BB6A 50%, 
+        var(--Secondary-color) 100%);
+    background-size: 200% 100%;
+    border-radius: 10px;
+    animation: shimmer 1.5s ease-in-out infinite;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Testo percentuale */
+.preloader-text {
+    font-family: var(--Titles-font);
+    font-size: 18px;
+    color: var(--Primary-color);
+    margin-top: 20px;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+/* Animazione puntini */
+.loading-dots::after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .preloader-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .preloader-bar-container {
+        width: 250px;
+    }
+    
+    .preloader-text {
+        font-size: 16px;
+    }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------
 -----------------------------------------------STILE BARRA NAVIGAZIONE ------------------------------------------
 ---------------------------------------------------------------------------------------------------------------*/
 
@@ -192,6 +303,13 @@ body:active .cursor-circle {
     width: 60px;  /* Si ingrandisce */
     height: 60px;
     transition: width 0.2s, height 0.2s; /* Rende l'espansione fluida */
+}
+
+@media (max-width: 425px) {
+    .cursor-circle {
+        display: none !important;
+        opacity: 0 !important; 
+    } 
 }
 
 
@@ -1905,3 +2023,5 @@ padding: 50px;
         /* Punto più alto */
     }
 }
+
+
